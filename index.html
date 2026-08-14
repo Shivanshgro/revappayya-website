@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Revappayya IT Services — end-to-end IT infrastructure, managed services, software engineering and digital products."/>
+  <title>Revappayya IT Services | End-to-End Technology</title>
+  <style>
+    :root{
+      --bg:#06111f; --bg2:#08192b; --panel:#0d2238; --text:#f5f8fc; --muted:#a7b7c9;
+      --line:rgba(255,255,255,.12); --accent:#55b8ff; --accent2:#8b6cff; --white:#fff;
+      --max:1220px; --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(3,10,18,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em}
+    .brand-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#fff,#8ad0ff 45%,#6875ff);display:grid;place-items:center;color:#06111f;font-size:16px}
+    .brand small{display:block;color:#8ea0b4;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .menu{display:flex;gap:26px;align-items:center;font-size:14px;color:#d5dfeb}
+    .menu a:hover{color:#fff}
+    .cta{padding:11px 17px;border:1px solid rgba(255,255,255,.22);border-radius:999px}
+    .hero{position:relative;min-height:820px;overflow:hidden;display:flex;align-items:center;padding-top:110px;background:
+      radial-gradient(circle at 75% 25%,rgba(69,161,255,.16),transparent 28%),
+      linear-gradient(180deg,#051323 0%,#07182a 52%,#04101d 100%);}
+    .hero-grid{position:absolute;inset:0;opacity:.28;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(90deg,transparent,black 26%,black 74%,transparent)}
+    .glow{position:absolute;width:550px;height:550px;border-radius:50%;filter:blur(65px);opacity:.35;background:#2574d9;right:-120px;top:60px}
+    .wave{position:absolute;inset:auto -6% 16%;height:330px;transform:rotate(-5deg);opacity:.8}
+    .wave svg{width:100%;height:100%}
+    .hero-content{position:relative;z-index:2;max-width:720px;padding:80px 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.04);font-size:12px;color:#c9d6e4;text-transform:uppercase;letter-spacing:.12em}
+    h1{font-size:clamp(54px,8vw,104px);line-height:.93;letter-spacing:-.055em;margin:22px 0 24px;max-width:900px}
+    .hero p{font-size:20px;max-width:650px;color:#b6c7d9;margin:0 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{padding:14px 20px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.16);display:inline-flex;align-items:center;gap:8px}
+    .button.primary{background:#fff;color:#06111f}
+    .button.secondary{background:rgba(255,255,255,.04)}
+    .hero-stack{position:absolute;right:8%;top:28%;width:360px;height:390px;z-index:2;display:none}
+    .float-card{position:absolute;border:1px solid rgba(255,255,255,.12);background:rgba(8,26,45,.72);backdrop-filter:blur(14px);border-radius:24px;box-shadow:0 35px 80px rgba(0,0,0,.35);padding:18px}
+    .float-card.one{width:290px;right:0;top:0;transform:rotate(-7deg)}
+    .float-card.two{width:265px;left:0;top:175px;transform:rotate(5deg)}
+    .float-card .mini{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#9bb0c6}
+    .float-card strong{display:block;font-size:21px;margin-top:6px}
+    .visual{height:150px;border-radius:17px;margin-bottom:15px;overflow:hidden;background:radial-gradient(circle at 35% 30%,#5fb6ff,transparent 27%),linear-gradient(135deg,#102d4b,#0a1322);position:relative}
+    .visual:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent 0 8px,rgba(117,186,255,.12) 8px 10px);transform:skewY(-8deg)}
+    section{padding:110px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}
+    .kicker{color:#75c5ff;text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:700}
+    h2{font-size:clamp(34px,5vw,62px);line-height:1;letter-spacing:-.045em;margin:10px 0 0}
+    .lead{max-width:560px;color:#aebfd1}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-height:290px;position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-70px;background:radial-gradient(circle,rgba(74,174,255,.18),transparent 68%)}
+    .num{font-size:12px;color:#7ea4c7}
+    .card h3{font-size:25px;margin:42px 0 14px;letter-spacing:-.02em}
+    .card p{color:#a8bbcf}
+    .linkline{position:absolute;bottom:24px;color:#d8e7f5;font-weight:700;font-size:13px}
+    .dark{background:#040d18}
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .service{padding:25px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}
+    .service strong{font-size:18px}
+    .service p{color:#9db0c3;margin:8px 0 0;font-size:14px}
+    .service span{display:inline-block;margin-bottom:10px;color:#7bc9ff;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .product{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch}
+    .product-copy,.product-visual{border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.018));padding:38px;min-height:470px}
+    .product-copy{display:flex;flex-direction:column;justify-content:space-between}
+    .product-copy h3{font-size:52px;letter-spacing:-.045em;margin:18px 0 10px}
+    .product-copy p{color:#a6b8cb;max-width:540px}
+    .product-tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:12px;color:#cfe0f0}
+    .product-visual{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .phone{width:min(300px,80%);aspect-ratio:.52;background:#05111f;border:7px solid #1c3249;border-radius:42px;box-shadow:0 35px 80px rgba(0,0,0,.5);position:relative;overflow:hidden}
+    .phone-screen{position:absolute;inset:0;background:linear-gradient(160deg,#061a2e,#0d3554);padding:26px 18px}
+    .phone-title{font-size:12px;color:#92b8d6}
+    .phone-main{font-size:34px;line-height:1;font-weight:800;margin-top:25px}
+    .app-box{margin-top:18px;border-radius:18px;padding:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)}
+    .coming{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+    .coming .card{min-height:160px}
+    .global{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .global-box{padding:34px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(140deg,#0c253d,#071522)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+    .stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}
+    .stat strong{display:block;font-size:28px}
+    .stat span{font-size:12px;color:#94aac0}
+    .contact{padding:90px 0 110px}
+    .contact-box{border:1px solid var(--line);border-radius:30px;padding:44px;background:radial-gradient(circle at 75% 35%,rgba(78,149,255,.25),transparent 30%),linear-gradient(135deg,#0c2c48,#071521)}
+    .contact-box h2{max-width:720px}
+    .footer{border-top:1px solid var(--line);padding:42px 0;color:#91a6ba}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .footer-links{display:flex;gap:20px;font-size:13px}
+    @media (min-width:1100px){.hero-stack{display:block}}
+    @media (max-width:900px){
+      .menu{display:none}.hero{min-height:720px}.pillars,.product,.global{grid-template-columns:1fr}.services{grid-template-columns:1fr}
+      .section-head{display:block}.lead{margin-top:18px}.product-copy,.product-visual{min-height:360px}.coming{grid-template-columns:1fr}
+      .footer-inner{display:block}.footer-links{margin-top:15px;flex-wrap:wrap}
+    }
+  
+    /* Premium motion */
+    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:
+      radial-gradient(circle at 58% 48%,rgba(81,190,255,.08),transparent 18%),
+      linear-gradient(115deg,transparent 0 38%,rgba(255,255,255,.025) 50%,transparent 62%);
+      mix-blend-mode:screen;animation:heroSheen 10s ease-in-out infinite alternate}
+    .wave{height:390px;bottom:10%;opacity:.9;filter:saturate(1.18)}
+    .wires path{stroke-dasharray:.055 .018;animation:wireFlow 8s linear infinite}
+    .wires path:nth-child(2){animation-duration:10s;animation-delay:-2s}
+    .wires path:nth-child(3){animation-duration:12s;animation-delay:-4s}
+    .wires path:nth-child(4){animation-duration:14s;animation-delay:-6s}
+    .wire-glow{animation:wirePulse 5s ease-in-out infinite}
+    .signal{transform-box:fill-box;transform-origin:center;animation:signalMove 7s linear infinite}
+    .signal-b{animation-duration:9s;animation-delay:-3.5s}
+    .signal circle:first-child{fill:#7acbff;filter:drop-shadow(0 0 8px rgba(122,203,255,.9))}
+    .signal-b circle:first-child{fill:#9d86ff;filter:drop-shadow(0 0 8px rgba(157,134,255,.8))}
+    .signal-ring{fill:none;stroke:#7acbff;stroke-width:1;opacity:.62;animation:ringPulse 1.8s ease-out infinite}
+    .signal-b .signal-ring{stroke:#9d86ff}
+    .float-card.one{animation:floatOne 6s ease-in-out infinite}
+    .float-card.two{animation:floatTwo 7s ease-in-out infinite}
+    .card,.service,.global-box,.product-copy,.product-visual{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+    .card:hover,.service:hover,.global-box:hover,.product-copy:hover,.product-visual:hover{transform:translateY(-7px);border-color:rgba(110,198,255,.3);box-shadow:0 24px 70px rgba(0,0,0,.22)}
+    .brand-mark{box-shadow:0 0 28px rgba(88,191,255,.18)}
+    .button.primary{box-shadow:0 10px 30px rgba(255,255,255,.08)}
+    @keyframes wireFlow{to{stroke-dashoffset:-1.073}}
+    @keyframes wirePulse{0%,100%{opacity:.28;transform:translateX(0)}50%{opacity:.55;transform:translateX(16px)}}
+    @keyframes signalMove{0%{transform:translate(18%,81%)}25%{transform:translate(38%,48%)}50%{transform:translate(61%,56%)}75%{transform:translate(78%,23%)}100%{transform:translate(98%,29%)}}
+    @keyframes ringPulse{0%{transform:scale(.55);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+    @keyframes floatOne{0%,100%{transform:rotate(-7deg) translate3d(0,0,0)}50%{transform:rotate(-5deg) translate3d(0,-14px,0)}}
+    @keyframes floatTwo{0%,100%{transform:rotate(5deg) translate3d(0,0,0)}50%{transform:rotate(3deg) translate3d(0,12px,0)}}
+    @keyframes heroSheen{0%{opacity:.25;transform:translateX(-3%)}100%{opacity:.55;transform:translateX(3%)}}
+    @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+    }
+
+  
+    /* Premium service experience */
+    .service-orbit{position:relative;min-height:620px;margin-top:28px;border:1px solid rgba(255,255,255,.09);border-radius:34px;overflow:hidden;background:
+      radial-gradient(circle at 50% 50%,rgba(74,179,255,.13),transparent 14%),
+      radial-gradient(circle at 50% 50%,rgba(120,100,255,.08),transparent 32%),
+      linear-gradient(135deg,#061523,#071c2e 48%,#04101c);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 35px 100px rgba(0,0,0,.22)}
+    .service-orbit:before,.service-orbit:after{content:"";position:absolute;left:50%;top:50%;border:1px solid rgba(91,196,255,.12);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+    .service-orbit:before{width:360px;height:360px;box-shadow:0 0 60px rgba(81,188,255,.05)}
+    .service-orbit:after{width:560px;height:560px;border-style:dashed;animation:orbitSpin 28s linear infinite}
+    .service-core{position:absolute;left:50%;top:50%;width:220px;height:220px;transform:translate(-50%,-50%);display:grid;place-items:center;text-align:center}
+    .core-ring{position:absolute;border:1px solid rgba(90,198,255,.25);border-radius:50%;inset:0}
+    .ring-a{animation:corePulse 3.7s ease-in-out infinite}
+    .ring-b{inset:16px;border-color:rgba(157,134,255,.25);animation:corePulse 3.7s ease-in-out -1.8s infinite}
+    .core-dot{width:10px;height:10px;border-radius:50%;background:#79ccff;box-shadow:0 0 30px #79ccff,0 0 75px rgba(121,204,255,.55);z-index:2}
+    .core-label{position:absolute;bottom:-33px;white-space:nowrap;font-weight:800;letter-spacing:.13em;font-size:12px;color:#e5f2fc}
+    .core-label span{font-size:9px;letter-spacing:.18em;color:#7391aa;font-weight:600}
+    .service-node{position:absolute;width:205px;padding:15px 17px;border:1px solid rgba(255,255,255,.1);background:rgba(8,28,46,.72);backdrop-filter:blur(16px);border-radius:18px;box-shadow:0 20px 55px rgba(0,0,0,.22);transition:transform .35s ease,border-color .35s ease,background .35s ease}
+    .service-node:hover{transform:translateY(-5px) scale(1.025);border-color:rgba(102,205,255,.38);background:rgba(12,41,66,.88)}
+    .service-node span{display:block;color:#6ebeff;font-size:10px;letter-spacing:.14em;margin-bottom:6px}
+    .service-node strong{display:block;font-size:15px;letter-spacing:-.01em}
+    .service-node small{display:block;margin-top:4px;color:#91a9bd;font-size:11px}
+    .node-1{left:7%;top:12%}.node-2{right:7%;top:12%}.node-3{left:3%;top:43%}.node-4{right:3%;top:43%}.node-5{left:11%;bottom:10%}.node-6{right:11%;bottom:10%}.node-7{left:50%;bottom:3%;transform:translateX(-50%)}
+    .node-7:hover{transform:translateX(-50%) translateY(-5px) scale(1.025)}
+    .service-orbit .node-1:after,.service-orbit .node-2:after,.service-orbit .node-3:after,.service-orbit .node-4:after,.service-orbit .node-5:after,.service-orbit .node-6:after,.service-orbit .node-7:after{
+      content:"";position:absolute;width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(89,192,255,.6),transparent);opacity:.55}
+    .node-1:after{right:-49px;top:52%}.node-2:after{left:-49px;top:52%}.node-3:after{right:-49px;top:50%}.node-4:after{left:-49px;top:50%}.node-5:after{right:-49px;top:38%}.node-6:after{left:-49px;top:38%}.node-7:after{left:50%;top:-28px;transform:rotate(90deg)}
+    .service-explainer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .service-detail{display:flex;gap:20px;padding:27px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018));transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+    .service-detail:hover{transform:translateY(-5px);border-color:rgba(102,200,255,.28);box-shadow:0 24px 65px rgba(0,0,0,.18)}
+    .detail-number{flex:0 0 42px;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(93,185,255,.08);border:1px solid rgba(93,185,255,.17);color:#78c8ff;font-size:11px;font-weight:800}
+    .detail-kicker{text-transform:uppercase;letter-spacing:.14em;font-size:10px;color:#6cbcff}
+    .service-detail h3{font-size:21px;letter-spacing:-.025em;margin:7px 0 8px}
+    .service-detail p{font-size:13px;line-height:1.65;color:#9db1c5;margin:0}
+    .detail-points{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+    .detail-points span{padding:6px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);color:#c1d0de;font-size:10px}
+    @keyframes orbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+    @keyframes corePulse{0%,100%{transform:scale(.96);opacity:.6}50%{transform:scale(1.05);opacity:1}}
+    @media (max-width:1000px){
+      .service-orbit{min-height:760px}
+      .service-node{width:180px}
+      .node-1{left:4%}.node-2{right:4%}.node-3{left:1%}.node-4{right:1%}.node-5{left:5%}.node-6{right:5%}
+    }
+    @media (max-width:760px){
+      .service-orbit{min-height:auto;padding:24px;display:grid;gap:12px}
+      .service-core{position:relative;left:auto;top:auto;transform:none;width:180px;height:180px;margin:20px auto 70px}
+      .service-orbit:before,.service-orbit:after{display:none}
+      .service-node,.node-7{position:relative;inset:auto;left:auto;right:auto;bottom:auto;top:auto;width:100%;transform:none}
+      .node-7:hover{transform:translateY(-5px) scale(1.025)}
+      .service-node:after{display:none}
+      .service-explainer-grid{grid-template-columns:1fr}
+    }
+
+  
+    /* Premium software/application development experience */
+    .engineering-section{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 20% 20%,rgba(76,180,255,.06),transparent 25%),
+      linear-gradient(180deg,#06111f 0%,#071526 55%,#04101b 100%)}
+    .engineering-stage{position:relative;min-height:650px;margin-top:30px;border:1px solid rgba(255,255,255,.09);border-radius:34px;overflow:hidden;background:
+      radial-gradient(circle at 50% 48%,rgba(95,186,255,.1),transparent 16%),
+      radial-gradient(circle at 72% 30%,rgba(145,121,255,.08),transparent 20%),
+      linear-gradient(140deg,#061521,#081b2e 50%,#040e19);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 35px 110px rgba(0,0,0,.22)}
+    .engineering-stage:before{content:"";position:absolute;inset:0;background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:56px 56px;mask-image:radial-gradient(circle at 50% 50%,black,transparent 78%);opacity:.42}
+    .stage-glow{position:absolute;border-radius:50%;filter:blur(55px);pointer-events:none}
+    .glow-one{width:300px;height:300px;background:#318cf0;opacity:.12;left:10%;top:10%;animation:engGlow 9s ease-in-out infinite}
+    .glow-two{width:260px;height:260px;background:#7967ff;opacity:.11;right:7%;bottom:8%;animation:engGlow 11s ease-in-out -3s infinite}
+    .pipeline-line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(95,194,255,.62),transparent);transform-origin:left center;overflow:visible}
+    .pipeline-line:after{content:"";position:absolute;top:-2px;left:0;width:6px;height:6px;border-radius:50%;background:#79c9ff;box-shadow:0 0 18px rgba(121,201,255,.9);animation:dataTravel 4s linear infinite}
+    .line-one{left:18%;top:37%;width:22%;transform:rotate(8deg)}
+    .line-two{left:37%;top:55%;width:27%;transform:rotate(-1deg)}
+    .line-three{left:61%;top:47%;width:22%;transform:rotate(-12deg)}
+    .eng-node{position:absolute;width:180px;padding:17px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(8,27,44,.72);backdrop-filter:blur(16px);box-shadow:0 18px 50px rgba(0,0,0,.25);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;animation:engFloat 6s ease-in-out infinite}
+    .eng-node:hover{transform:translateY(-7px) scale(1.03);border-color:rgba(104,201,255,.34);box-shadow:0 24px 65px rgba(0,0,0,.3)}
+    .node-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;margin-bottom:12px;background:linear-gradient(135deg,rgba(87,190,255,.15),rgba(137,109,255,.13));border:1px solid rgba(116,200,255,.16);color:#d9efff;font-weight:800}
+    .eng-node strong{display:block;font-size:17px}
+    .eng-node small{display:block;color:#8fa8bd;margin-top:4px;font-size:11px}
+    .eng-idea{left:6%;top:16%;animation-delay:-1s}.eng-design{left:23%;top:49%;animation-delay:-2s}.eng-build{left:50%;top:31%;animation-delay:-3s}.eng-cloud{right:8%;top:14%;animation-delay:-4s}.eng-operate{right:8%;bottom:12%;animation-delay:-5s}
+    .code-window{position:absolute;right:7%;bottom:16%;width:340px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(4,13,24,.86);box-shadow:0 25px 75px rgba(0,0,0,.4);overflow:hidden;animation:windowFloat 7s ease-in-out infinite}
+    .code-top{height:42px;padding:0 14px;display:flex;align-items:center;gap:7px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025)}
+    .dot{width:8px;height:8px;border-radius:50%;display:block}.d1{background:#ff6b7a}.d2{background:#ffcc6b}.d3{background:#6bffbe}
+    .code-title{font-size:10px;color:#7d95aa;margin-left:5px}
+    .code-body{padding:20px 16px 17px;font:12px/2 ui-monospace,SFMono-Regular,Menlo,monospace;color:#d9e7f3}
+    .code-no{display:inline-block;width:24px;color:#49647b}
+    .code-key{color:#72c9ff}.code-var{color:#e2cfff}.code-text{color:#9ee7c0}
+    .code-progress{height:2px;background:rgba(255,255,255,.05);overflow:hidden}.code-progress span{display:block;width:42%;height:100%;background:linear-gradient(90deg,#54bfff,#9f82ff);animation:codeProgress 3s ease-in-out infinite}
+    .engineering-capabilities{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    .eng-cap{display:flex;gap:18px;padding:26px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018));transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+    .eng-cap:hover{transform:translateY(-5px);border-color:rgba(104,201,255,.26);box-shadow:0 24px 65px rgba(0,0,0,.18)}
+    .eng-cap-mark{flex:0 0 43px;width:43px;height:43px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(104,201,255,.16);background:rgba(81,181,255,.06);color:#75c7ff;font-size:11px;font-weight:800}
+    .eng-cap-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#71c6ff}
+    .eng-cap h3{font-size:21px;margin:7px 0 8px;letter-spacing:-.02em}.eng-cap p{margin:0;color:#9eafc2;font-size:13px;line-height:1.65}
+    @keyframes engGlow{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(30px,-18px,0) scale(1.08)}}
+    @keyframes dataTravel{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:100%;opacity:0}}
+    @keyframes engFloat{0%,100%{translate:0 0}50%{translate:0 -9px}}
+    @keyframes windowFloat{0%,100%{transform:translateY(0) rotate(.4deg)}50%{transform:translateY(-12px) rotate(-.4deg)}}
+    @keyframes codeProgress{0%{width:10%}50%{width:72%}100%{width:34%}}
+    @media (max-width:1050px){
+      .engineering-stage{min-height:720px}
+      .eng-idea{left:4%}.eng-design{left:8%}.eng-build{left:44%}.eng-cloud{right:4%}.eng-operate{right:4%}
+      .code-window{right:6%;bottom:6%}
+    }
+    @media (max-width:760px){
+      .engineering-stage{min-height:920px;padding:20px}
+      .engineering-stage:before{opacity:.18}
+      .eng-node{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;margin-bottom:12px;animation:none}
+      .code-window{position:relative;right:auto;bottom:auto;width:100%;margin-top:16px}
+      .pipeline-line{display:none}
+      .engineering-capabilities{grid-template-columns:1fr}
+      .engineering-stage{display:flex;flex-direction:column;justify-content:center}
+    }
+
+  
+    /* Animated capability cards */
+    .engineering-capabilities .eng-cap{position:relative;overflow:hidden;min-height:330px;display:block}
+    .cap-visual{height:150px;margin:-6px -6px 22px;border-radius:17px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:radial-gradient(circle at 50% 50%,rgba(83,190,255,.09),transparent 55%),linear-gradient(145deg,#071725,#0a2035)}
+    .eng-cap-01 .cap-visual{background:radial-gradient(circle at 50% 65%,rgba(65,183,255,.18),transparent 45%),linear-gradient(145deg,#071624,#081f33)}
+    .device{position:absolute;border:1px solid rgba(142,209,255,.28);background:rgba(8,22,36,.75);box-shadow:0 20px 45px rgba(0,0,0,.3);backdrop-filter:blur(7px)}
+    .phone-mini{width:62px;height:108px;border-radius:14px;left:30%;top:28px;transform:rotate(-8deg);animation:capPhone 5s ease-in-out infinite}
+    .laptop-mini{width:120px;height:78px;border-radius:9px;right:13%;top:43px;transform:rotate(6deg);animation:capLaptop 5.8s ease-in-out infinite}
+    .laptop-mini:after{content:"";position:absolute;left:-9px;right:-9px;bottom:-11px;height:7px;border-radius:0 0 9px 9px;background:rgba(112,185,232,.18);border:1px solid rgba(142,209,255,.18)}
+    .screen{position:absolute;inset:6px;border-radius:8px;background:linear-gradient(180deg,#081a2b,#0c2943);padding:9px}
+    .screen-dot{display:block;width:13px;height:13px;border-radius:50%;background:#71caff;box-shadow:0 0 14px #71caff;animation:screenPulse 2s infinite}
+    .screen-line{display:block;width:72%;height:4px;margin-top:11px;border-radius:999px;background:linear-gradient(90deg,#69c8ff,rgba(105,200,255,.08));animation:screenLine 2.7s ease-in-out infinite}
+    .screen-line.short{width:48%;animation-delay:-1s}
+    .screen-card{display:block;width:100%;height:32px;margin-top:13px;border-radius:7px;background:linear-gradient(135deg,rgba(79,185,255,.16),rgba(131,107,255,.12));border:1px solid rgba(120,199,255,.14)}
+    .screen-grid{display:block;width:100%;height:35px;margin-top:13px;border-radius:7px;background:linear-gradient(90deg,rgba(103,200,255,.14) 1px,transparent 1px),linear-gradient(rgba(103,200,255,.14) 1px,transparent 1px);background-size:13px 13px;animation:gridMove 4s linear infinite}
+    .cap-particle{position:absolute;width:5px;height:5px;border-radius:50%;background:#7fd2ff;box-shadow:0 0 14px rgba(127,210,255,.9);animation:particleFlight 4s linear infinite}
+    .p1{left:20%;top:68%;animation-delay:-.5s}.p2{left:46%;top:20%;animation-delay:-1.9s}.p3{left:72%;top:76%;animation-delay:-3s}
+
+    .visual-api{display:grid;place-items:center}
+    .api-orbit{position:absolute;border:1px solid rgba(102,200,255,.2);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+    .orbit-1{width:100px;height:100px;animation:apiSpin 9s linear infinite}
+    .orbit-2{width:140px;height:140px;border-style:dashed;animation:apiSpinReverse 13s linear infinite}
+    .api-core{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#113a57,#18294d);border:1px solid rgba(119,205,255,.3);font-size:11px;font-weight:800;color:#d8f0ff;box-shadow:0 0 35px rgba(81,186,255,.17);animation:coreBreathe 3s ease-in-out infinite}
+    .api-node{position:absolute;padding:4px 6px;border-radius:7px;font:700 8px ui-monospace,monospace;background:rgba(12,33,51,.9);border:1px solid rgba(122,201,255,.17);color:#bce9ff}
+    .api-a{left:17%;top:22%;animation:apiNodeFloat 4s ease-in-out infinite}.api-b{right:14%;top:28%;animation:apiNodeFloat 4.7s ease-in-out -1.6s infinite}.api-c{left:44%;bottom:11%;animation:apiNodeFloat 5s ease-in-out -2.5s infinite}
+    .api-beam{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#69caff,transparent);transform-origin:left center;animation:beamPulse 2.4s ease-in-out infinite}
+    .beam-a{width:78px;left:24%;top:42%;transform:rotate(18deg)}.beam-b{width:82px;left:51%;top:40%;transform:rotate(-16deg);animation-delay:-.8s}.beam-c{width:60px;left:49%;top:55%;transform:rotate(88deg);animation-delay:-1.4s}
+
+    .visual-devops{padding:20px 18px}
+    .dev-track{position:absolute;left:14%;right:14%;top:56%;height:2px;background:linear-gradient(90deg,transparent,rgba(102,204,255,.55),transparent);overflow:visible}
+    .track-dot{position:absolute;width:7px;height:7px;top:-2.5px;border-radius:50%;background:#78cdff;box-shadow:0 0 15px #78cdff}
+    .track-dot:nth-child(1){left:2%;animation:trackMove 4s linear infinite}.track-dot:nth-child(2){left:32%;animation:trackMove 4s linear -1s infinite}.track-dot:nth-child(3){left:62%;animation:trackMove 4s linear -2s infinite}.track-dot:nth-child(4){left:92%;animation:trackMove 4s linear -3s infinite}
+    .dev-stage{position:absolute;top:33%;padding:7px 10px;border-radius:9px;font:800 8px ui-monospace,monospace;letter-spacing:.12em;border:1px solid rgba(117,207,255,.15);background:rgba(10,30,47,.84);color:#b8e8ff;animation:stageLift 4.2s ease-in-out infinite}
+    .stage-1{left:8%}.stage-2{left:31%;animation-delay:-1s}.stage-3{right:27%;animation-delay:-2s}.stage-4{right:7%;animation-delay:-3s}
+    .deploy-pulse{position:absolute;right:12%;bottom:16%;width:8px;height:8px;border-radius:50%;background:#8dffca;box-shadow:0 0 18px rgba(141,255,202,.8);animation:deployPulse 1.8s infinite}
+
+    .visual-ai{background:radial-gradient(circle at 50% 48%,rgba(143,119,255,.17),transparent 35%),linear-gradient(145deg,#091627,#13203f)}
+    .ai-grid{position:absolute;inset:0;background:linear-gradient(rgba(109,180,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(109,180,255,.09) 1px,transparent 1px);background-size:18px 18px;mask-image:radial-gradient(circle,black,transparent 70%);animation:aiGridMove 8s linear infinite}
+    .ai-brain{position:absolute;width:86px;height:86px;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid rgba(148,129,255,.34);border-radius:46% 54% 52% 48%;box-shadow:0 0 45px rgba(133,112,255,.15);animation:brainFloat 4s ease-in-out infinite}
+    .ai-brain:before,.ai-brain:after{content:"";position:absolute;top:12%;bottom:12%;width:1px;background:linear-gradient(180deg,transparent,#9b83ff,transparent)}
+    .ai-brain:before{left:36%}.ai-brain:after{right:36%}
+    .ai-brain span{position:absolute;width:6px;height:6px;border-radius:50%;background:#a993ff;box-shadow:0 0 12px #a993ff;animation:neuronPulse 2.2s infinite}
+    .ai-brain span:nth-child(1){left:17%;top:30%}.ai-brain span:nth-child(2){right:17%;top:44%;animation-delay:-.7s}.ai-brain span:nth-child(3){left:34%;bottom:18%;animation-delay:-1.2s}.ai-brain span:nth-child(4){right:32%;bottom:23%;animation-delay:-1.7s}
+    .ai-scan{position:absolute;left:14%;right:14%;height:1px;top:25%;background:linear-gradient(90deg,transparent,#9a83ff,transparent);box-shadow:0 0 18px rgba(154,131,255,.6);animation:aiScan 3s ease-in-out infinite}
+    .ai-data{position:absolute;font:800 8px ui-monospace,monospace;color:#c7baff;opacity:.7}.d1{left:15%;top:20%;animation:dataFloat 4s ease-in-out infinite}.d2{right:16%;top:70%;animation:dataFloat 4s ease-in-out -1.5s infinite}.d3{left:74%;top:28%;animation:dataFloat 4s ease-in-out -2.6s infinite}
+
+    .engineering-capabilities .eng-cap:hover .cap-visual{border-color:rgba(106,203,255,.25);box-shadow:0 0 35px rgba(74,174,255,.08)}
+    @keyframes capPhone{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-8px)}}
+    @keyframes capLaptop{0%,100%{transform:rotate(6deg) translateY(0)}50%{transform:rotate(3deg) translateY(-10px)}}
+    @keyframes screenPulse{0%,100%{opacity:.55;transform:scale(.92)}50%{opacity:1;transform:scale(1.07)}}
+    @keyframes screenLine{0%,100%{opacity:.35;transform:scaleX(.82);transform-origin:left}50%{opacity:1;transform:scaleX(1)}}
+    @keyframes gridMove{to{background-position:13px 13px}}
+    @keyframes particleFlight{0%{transform:translate(0,0);opacity:0}15%{opacity:1}55%{transform:translate(45px,-25px);opacity:1}100%{transform:translate(85px,10px);opacity:0}}
+    @keyframes apiSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes apiSpinReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+    @keyframes coreBreathe{0%,100%{transform:scale(.95);box-shadow:0 0 25px rgba(81,186,255,.12)}50%{transform:scale(1.06);box-shadow:0 0 45px rgba(81,186,255,.24)}}
+    @keyframes apiNodeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes beamPulse{0%,100%{opacity:.2;transform-origin:left}50%{opacity:1;box-shadow:0 0 10px rgba(105,202,255,.7)}}
+    @keyframes trackMove{0%{transform:translateX(0) scale(.8);opacity:.2}15%{opacity:1}100%{transform:translateX(0) scale(1.15);opacity:.2}}
+    @keyframes stageLift{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(-7px);opacity:1}}
+    @keyframes deployPulse{0%,100%{transform:scale(.7);opacity:.55}50%{transform:scale(1.45);opacity:1}}
+    @keyframes aiGridMove{to{background-position:18px 18px}}
+    @keyframes brainFloat{0%,100%{transform:translate(-50%,-50%) rotate(-2deg)}50%{transform:translate(-50%,-56%) rotate(2deg)}}
+    @keyframes neuronPulse{0%,100%{transform:scale(.7);opacity:.55}50%{transform:scale(1.5);opacity:1}}
+    @keyframes aiScan{0%,100%{top:18%;opacity:.15}50%{top:72%;opacity:.85}}
+    @keyframes dataFloat{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-8px);opacity:1}}
+
+  
+    /* Revappayya Academy — premium animated learning experience */
+    .academy-section{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 12% 18%,rgba(81,188,255,.055),transparent 24%),
+      radial-gradient(circle at 88% 45%,rgba(147,112,255,.055),transparent 26%),
+      linear-gradient(180deg,#06111f,#071626 54%,#040f1a)}
+    .academy-hero{position:relative;min-height:560px;margin-top:30px;border:1px solid rgba(255,255,255,.09);border-radius:34px;overflow:hidden;background:
+      radial-gradient(circle at 50% 50%,rgba(74,187,255,.11),transparent 23%),
+      radial-gradient(circle at 70% 30%,rgba(143,112,255,.07),transparent 25%),
+      linear-gradient(145deg,#061523,#0a2035 50%,#040e19);box-shadow:0 40px 110px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04)}
+    .academy-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(circle at 50% 50%,black,transparent 78%);opacity:.4}
+    .academy-glow{position:absolute;width:330px;height:330px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:#3baeff;filter:blur(85px);opacity:.1;animation:academyGlow 6s ease-in-out infinite}
+    .academy-title{position:absolute;left:42px;top:38px;max-width:560px;z-index:2}
+    .academy-badge{display:inline-flex;padding:7px 11px;border-radius:999px;border:1px solid rgba(111,199,255,.18);background:rgba(83,184,255,.05);font-size:10px;letter-spacing:.15em;color:#80ccff;font-weight:800}
+    .academy-title h3{font-size:40px;line-height:1.02;letter-spacing:-.045em;margin:16px 0 10px}.academy-title p{color:#9fb4c9;max-width:500px;margin:0}
+    .academy-flow{position:absolute;inset:0}
+    .flow-track{position:absolute;left:9%;right:9%;top:64%;height:2px;background:linear-gradient(90deg,transparent,rgba(93,196,255,.45),rgba(150,129,255,.45),transparent);box-shadow:0 0 24px rgba(74,180,255,.08)}
+    .flow-track:before,.flow-track:after{content:"";position:absolute;width:12px;height:12px;top:-5px;border-radius:50%;background:#73c9ff;box-shadow:0 0 28px rgba(115,201,255,.85);animation:flowSignal 7s linear infinite}
+    .flow-track:after{animation-delay:-3.5s;background:#9c82ff;box-shadow:0 0 28px rgba(156,130,255,.7)}
+    .learn-node{position:absolute;width:165px;min-height:96px;padding:14px 15px;border:1px solid rgba(255,255,255,.1);border-radius:17px;background:rgba(8,28,45,.74);backdrop-filter:blur(14px);box-shadow:0 18px 55px rgba(0,0,0,.24);animation:learnFloat 6s ease-in-out infinite;transition:transform .3s,border-color .3s,background .3s}
+    .learn-node:hover{transform:translateY(-7px) scale(1.035);border-color:rgba(105,201,255,.35);background:rgba(12,39,63,.9)}
+    .learn-node span{font-size:9px;color:#6fc5ff;letter-spacing:.15em;font-weight:800}.learn-node strong{display:block;font-size:15px;margin-top:5px}.learn-node small{display:block;color:#8fa9bd;font-size:10px;margin-top:3px}
+    .n1{left:5%;top:50%;animation-delay:-1s}.n2{left:17%;top:26%;animation-delay:-2.2s}.n3{left:35%;top:45%;animation-delay:-3.4s}.n4{left:52%;top:27%;animation-delay:-4.6s}.n5{right:27%;top:45%;animation-delay:-5.8s}.n6{right:12%;top:26%;animation-delay:-7s}.n7{right:6%;top:50%;animation-delay:-8.2s}.n8{left:50%;bottom:6%;transform:translateX(-50%);animation-delay:-9.4s}
+    .n8:hover{transform:translateX(-50%) translateY(-7px) scale(1.035)}
+    .learning-pulse{position:absolute;width:8px;height:8px;border-radius:50%;background:#79ccff;box-shadow:0 0 18px #79ccff;animation:learningTravel 8s linear infinite}.lp1{left:9%;top:64%}.lp2{left:9%;top:64%;animation-delay:-4s;background:#a58cff;box-shadow:0 0 18px #a58cff}
+    .course-modules{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:18px}
+    .course-module{position:relative;min-height:385px;padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.017));overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+    .course-module:hover{transform:translateY(-7px);border-color:rgba(106,201,255,.28);box-shadow:0 26px 70px rgba(0,0,0,.24)}
+    .module-art{height:145px;margin-bottom:20px;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.06);background:linear-gradient(145deg,#071725,#091e32)}
+    .module-art:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.025) 50%,transparent 65%);animation:artSheen 5s ease-in-out infinite}
+    .module-number{font-size:10px;color:#72c6ff;letter-spacing:.14em;font-weight:800}.module-kicker{text-transform:uppercase;letter-spacing:.13em;color:#7291aa;font-size:9px;margin-top:8px}.course-module h3{font-size:20px;line-height:1.13;letter-spacing:-.025em;margin:8px 0}.course-module p{font-size:12px;line-height:1.65;color:#9badbf;margin:0}
+    .art-orb{position:absolute;width:58px;height:58px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid rgba(112,201,255,.28);box-shadow:0 0 35px rgba(93,192,255,.14);animation:orbPulse 3s ease-in-out infinite}
+    .art-line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#77caff,transparent);transform-origin:left;animation:artLine 3.2s ease-in-out infinite}.art-line.l1{width:130px;left:14%;top:35%;transform:rotate(24deg)}.art-line.l2{width:115px;right:9%;top:64%;transform:rotate(-22deg);animation-delay:-1.2s}
+    .art-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#79d0ff;box-shadow:0 0 14px #79d0ff;animation:artDot 3.5s linear infinite}.art-dot.d1{left:19%;top:26%}.art-dot.d2{right:18%;top:32%;animation-delay:-1.1s}.art-dot.d3{left:67%;bottom:20%;animation-delay:-2.2s}
+    .arch-box{position:absolute;padding:9px 12px;border-radius:10px;background:rgba(10,31,48,.9);border:1px solid rgba(116,204,255,.16);font:800 9px ui-monospace;color:#b9e8ff;box-shadow:0 10px 25px rgba(0,0,0,.23);animation:archFloat 4s ease-in-out infinite}.b1{left:8%;top:32%}.b2{left:43%;top:49%;animation-delay:-1.2s}.b3{right:8%;top:32%;animation-delay:-2.4s}.arch-connector{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#63c5ff,transparent);width:32%;top:52%;animation:connectorPulse 2.8s ease-in-out infinite}.c1{left:22%}.c2{right:22%;animation-delay:-1.3s}
+    .ui-frame{position:absolute;border:1px solid rgba(114,205,255,.22);background:linear-gradient(180deg,#082139,#0c2b45);border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,.3)}.f1{width:160px;height:88px;left:9%;top:28%;transform:rotate(-5deg);animation:frameFloat 5s ease-in-out infinite}.f2{width:112px;height:76px;right:10%;top:38%;transform:rotate(6deg);animation:frameFloat 5.5s ease-in-out -2s infinite}.ui-cursor{position:absolute;width:0;height:0;border-left:8px solid #dff6ff;border-top:5px solid transparent;border-bottom:5px solid transparent;left:56%;top:53%;filter:drop-shadow(0 0 8px rgba(223,246,255,.7));animation:cursorMove 3s ease-in-out infinite}
+    .code-chip{position:absolute;padding:7px 9px;border-radius:8px;background:rgba(11,32,49,.95);border:1px solid rgba(106,203,255,.17);font:800 8px ui-monospace;color:#bfeaff;animation:chipFloat 4s ease-in-out infinite}.code-chip:nth-child(1){left:9%;top:22%}.code-chip:nth-child(2){right:9%;top:24%;animation-delay:-1s}.code-chip:nth-child(3){left:17%;bottom:20%;animation-delay:-2s}.code-chip:nth-child(4){right:18%;bottom:19%;animation-delay:-3s}.code-stream{position:absolute;left:34%;right:34%;top:20%;bottom:20%;background:repeating-linear-gradient(180deg,rgba(109,204,255,.35) 0 2px,transparent 2px 10px);mask-image:linear-gradient(180deg,transparent,black 15%,black 85%,transparent);animation:streamMove 2.2s linear infinite}
+    .db-cylinder{position:absolute;width:60px;height:76px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:30px/12px;background:linear-gradient(90deg,#0a2a43,#123d5a,#0a2a43);border:1px solid rgba(122,204,255,.25);box-shadow:0 0 38px rgba(88,184,255,.1);animation:dbFloat 4s ease-in-out infinite}.db-cylinder:before,.db-cylinder:after{content:"";position:absolute;left:-1px;right:-1px;border:1px solid rgba(122,204,255,.2);border-radius:50%;height:20px}.db-cylinder:before{top:-1px}.db-cylinder:after{bottom:-1px}
+    .data-link{position:absolute;height:1px;width:80px;background:linear-gradient(90deg,transparent,#76cbff,transparent);animation:dataLink 2.8s ease-in-out infinite}.dl1{left:6%;top:45%;transform:rotate(-8deg)}.dl2{right:6%;top:42%;transform:rotate(8deg);animation-delay:-.8s}.dl3{left:31%;bottom:16%;width:100px;transform:rotate(90deg);animation-delay:-1.6s}
+    .int-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:#0b2a43;border:1px solid rgba(111,204,255,.24);font:800 10px ui-monospace;color:#d1f0ff;box-shadow:0 0 30px rgba(86,190,255,.14);z-index:2;animation:intCore 3s infinite}.int-ring{position:absolute;left:50%;top:50%;width:110px;height:110px;border:1px dashed rgba(116,202,255,.22);border-radius:50%;transform:translate(-50%,-50%);animation:intSpin 8s linear infinite}.int-chip{position:absolute;padding:6px 8px;border-radius:8px;background:rgba(8,28,45,.9);border:1px solid rgba(114,202,255,.14);font:800 8px ui-monospace;color:#bfe9ff;animation:intNode 4s ease-in-out infinite}.i1{left:10%;top:25%}.i2{right:11%;top:26%;animation-delay:-1s}.i3{left:14%;bottom:20%;animation-delay:-2s}.i4{right:14%;bottom:20%;animation-delay:-3s}
+    .quality-ring{position:absolute;left:50%;top:50%;width:84px;height:84px;border-radius:50%;border:1px solid rgba(114,204,255,.25);transform:translate(-50%,-50%);animation:qualitySpin 10s linear infinite}.quality-check{position:absolute;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(21,56,72,.92);border:1px solid rgba(112,221,184,.24);color:#8fffc8;font-weight:800;font-size:12px;box-shadow:0 0 18px rgba(108,255,199,.1);animation:checkPulse 2.5s infinite}.q1{left:22%;top:23%}.q2{right:18%;top:32%;animation-delay:-.8s}.q3{left:46%;bottom:11%;animation-delay:-1.6s}.quality-scan{position:absolute;left:15%;right:15%;height:1px;top:31%;background:linear-gradient(90deg,transparent,#8fffc8,transparent);box-shadow:0 0 12px rgba(143,255,200,.5);animation:qualityScan 2.7s ease-in-out infinite}
+    .cloud-shape{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:54px;color:#8ed3ff;text-shadow:0 0 35px rgba(102,200,255,.3);animation:cloudFloat 4s ease-in-out infinite}.cloud-beam{position:absolute;height:1px;width:85px;background:linear-gradient(90deg,transparent,#7bceff,transparent);left:50%;top:50%;transform-origin:left;animation:cloudBeam 2.8s ease-in-out infinite}.b1{transform:rotate(20deg)}.b2{transform:rotate(145deg);animation-delay:-.9s}.b3{transform:rotate(265deg);animation-delay:-1.8s}.cloud-packet{position:absolute;width:6px;height:6px;border-radius:50%;background:#80d2ff;box-shadow:0 0 15px #80d2ff;animation:cloudPacket 3s linear infinite}
+    .deploy-box{position:absolute;padding:7px 10px;border-radius:8px;border:1px solid rgba(112,205,255,.16);background:rgba(11,32,49,.9);font:800 8px ui-monospace;color:#c7edff;animation:deployFloat 4.5s ease-in-out infinite}.deploy-box:nth-child(1){left:9%;top:20%}.deploy-box:nth-child(2){right:10%;top:20%;animation-delay:-1s}.deploy-box:nth-child(3){left:9%;bottom:18%;animation-delay:-2s}.deploy-box:nth-child(4){right:10%;bottom:18%;animation-delay:-3s}.deploy-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:31px;color:#83d0ff;animation:deployArrow 2s ease-in-out infinite}
+    .play-button{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;padding-left:3px;background:linear-gradient(135deg,#3d98e3,#6a64d9);box-shadow:0 0 40px rgba(83,165,255,.25);z-index:2;animation:playPulse 2.5s infinite}.play-ring{position:absolute;left:50%;top:50%;border:1px solid rgba(117,198,255,.24);border-radius:50%;transform:translate(-50%,-50%);animation:playRing 2.5s ease-out infinite}.pr1{width:88px;height:88px}.pr2{width:125px;height:125px;animation-delay:-1.2s}.play-spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#9dcfff;box-shadow:0 0 12px #9dcfff;animation:sparkOrbit 4s linear infinite}.s1{left:18%;top:30%}.s2{right:18%;bottom:25%;animation-delay:-2s}
+    .monitor-line{position:absolute;left:10%;right:10%;bottom:31%;height:2px;background:linear-gradient(90deg,#55c7ff 0 20%,#79f2c0 20% 47%,#8a7dff 47% 69%,#5bc9ff 69% 100%);filter:drop-shadow(0 0 7px rgba(90,200,255,.35));transform:skewY(-9deg);animation:monitorGraph 3.7s ease-in-out infinite}.monitor-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#b3e8ff;box-shadow:0 0 14px #b3e8ff;animation:monitorDot 3.7s infinite}.md1{left:27%;top:57%}.md2{left:51%;top:44%;animation-delay:-1.2s}.md3{right:19%;top:28%;animation-delay:-2.4s}.monitor-ping{position:absolute;right:17%;top:22%;width:11px;height:11px;border-radius:50%;border:1px solid #7ce8be;box-shadow:0 0 16px rgba(124,232,190,.7);animation:monitorPing 1.8s infinite}
+    .academy-final{margin-top:18px;padding:38px;border:1px solid rgba(255,255,255,.09);border-radius:28px;text-align:center;background:radial-gradient(circle at 50% 10%,rgba(78,179,255,.11),transparent 28%),linear-gradient(140deg,#091b2d,#06121f)}
+    .academy-final-line{width:170px;height:1px;margin:0 auto 23px;background:linear-gradient(90deg,transparent,#76caff,transparent);box-shadow:0 0 18px rgba(118,202,255,.5)}
+    .final-flow{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;color:#a7bed2;font-size:10px;letter-spacing:.12em;font-weight:700}.final-flow i{font-style:normal;color:#6bc5ff;animation:arrowBlink 1.4s infinite}.final-flow i:nth-of-type(2n){animation-delay:-.4s}
+    .academy-final h3{font-size:29px;letter-spacing:-.03em;margin:22px 0 7px}.academy-final p{color:#91a8bd;margin:0}
+    @keyframes academyGlow{0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.07}50%{transform:translate(-50%,-50%) scale(1.15);opacity:.14}}
+    @keyframes flowSignal{0%{left:0;opacity:0}9%{opacity:1}91%{opacity:1}100%{left:100%;opacity:0}}
+    @keyframes learnFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.n8{animation-name:learnFloat}
+    @keyframes learningTravel{0%{transform:translateX(0) translateY(0);opacity:0}10%{opacity:1}50%{transform:translateX(300px) translateY(-20px);opacity:1}90%{opacity:1}100%{transform:translateX(700px) translateY(6px);opacity:0}}
+    @keyframes artSheen{0%,100%{transform:translateX(-130%)}50%{transform:translateX(130%)}}
+    @keyframes orbPulse{0%,100%{transform:translate(-50%,-50%) scale(.92);opacity:.55}50%{transform:translate(-50%,-50%) scale(1.08);opacity:1}}
+    @keyframes artLine{0%,100%{opacity:.2}50%{opacity:1;box-shadow:0 0 10px rgba(119,202,255,.6)}}@keyframes artDot{0%{transform:scale(.5);opacity:.2}50%{transform:scale(1.4);opacity:1}100%{transform:scale(.5);opacity:.2}}
+    @keyframes archFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes connectorPulse{0%,100%{opacity:.15}50%{opacity:1;box-shadow:0 0 11px rgba(99,197,255,.5)}}
+    @keyframes frameFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-9px) rotate(-2deg)}}
+    @keyframes cursorMove{0%,100%{left:48%;top:52%}50%{left:67%;top:35%}}
+    @keyframes chipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes streamMove{to{background-position:0 20px}}
+    @keyframes dbFloat{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-57%)}}@keyframes dataLink{0%,100%{opacity:.15}50%{opacity:1}}
+    @keyframes intCore{0%,100%{transform:translate(-50%,-50%) scale(.95)}50%{transform:translate(-50%,-50%) scale(1.06)}}@keyframes intSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes intNode{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes qualitySpin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes checkPulse{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.12);opacity:1}}@keyframes qualityScan{0%,100%{top:24%;opacity:.15}50%{top:72%;opacity:.9}}
+    @keyframes cloudFloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-56%)}}@keyframes cloudBeam{0%,100%{opacity:.15}50%{opacity:1;box-shadow:0 0 10px rgba(123,206,255,.5)}}@keyframes cloudPacket{0%{left:50%;top:50%;opacity:0}12%{opacity:1}100%{left:86%;top:32%;opacity:0}}
+    @keyframes deployFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes deployArrow{0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.65}50%{transform:translate(-50%,-50%) scale(1.16);opacity:1}}
+    @keyframes playPulse{0%,100%{transform:translate(-50%,-50%) scale(.95)}50%{transform:translate(-50%,-50%) scale(1.08)}}@keyframes playRing{0%{width:60px;height:60px;opacity:.7}100%{width:150px;height:150px;opacity:0}}@keyframes sparkOrbit{to{transform:translate(90px,-15px);opacity:0}}
+    @keyframes monitorGraph{0%,100%{transform:skewY(-9deg) scaleX(.96);opacity:.65}50%{transform:skewY(-7deg) scaleX(1);opacity:1}}@keyframes monitorDot{0%,100%{transform:scale(.75);opacity:.45}50%{transform:scale(1.35);opacity:1}}@keyframes monitorPing{0%,100%{transform:scale(.7);opacity:.45}50%{transform:scale(1.35);opacity:1}}
+    @keyframes arrowBlink{0%,100%{opacity:.35}50%{opacity:1}}
+    @media (max-width:1050px){.course-modules{grid-template-columns:repeat(2,1fr)}.academy-hero{min-height:650px}.n4{left:47%}.n5{right:12%}.n6{right:3%}}
+    @media (max-width:760px){
+      .academy-title{position:relative;left:auto;top:auto;padding:28px}.academy-hero{min-height:900px}.academy-flow{position:relative;display:flex;flex-direction:column;gap:10px;padding:20px}.flow-track,.learning-pulse{display:none}.learn-node,.n8{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;transform:none;animation:none}.n8:hover{transform:translateY(-7px) scale(1.035)}
+      .course-modules{grid-template-columns:1fr}.course-module{min-height:360px}
+      .final-flow{gap:7px}
+    }
+
+  
+    /* Product-building hero conversion experience */
+    .hero-highlight{background:linear-gradient(90deg,#ffffff 0%,#7fd2ff 48%,#a18cff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-build-btn{padding-left:22px;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 12px 45px rgba(74,174,255,.18);transition:transform .3s ease,box-shadow .3s ease}
+    .hero-build-btn b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#06111f;color:#fff;transition:transform .3s ease}
+    .hero-build-btn:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(255,255,255,.18),0 18px 60px rgba(74,174,255,.24)}
+    .hero-build-btn:hover b{transform:translateX(4px)}
+    .hero-product-stage{position:absolute;right:1.5%;top:14%;width:560px;height:610px;z-index:2;filter:saturate(1.1)}
+    .stage-orbit{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(99,203,255,.12);box-shadow:0 0 70px rgba(75,183,255,.05)}
+    .orbit-main{width:500px;height:500px;animation:stageOrbit 24s linear infinite}
+    .orbit-small{width:340px;height:340px;border-style:dashed;animation:stageOrbitReverse 18s linear infinite}
+    .build-card{position:absolute;border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg,rgba(13,38,61,.88),rgba(7,22,37,.76));backdrop-filter:blur(18px);border-radius:22px;box-shadow:0 30px 90px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.04);overflow:hidden}
+    .build-card:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.045) 50%,transparent 65%);transform:translateX(-130%);animation:cardSheen 6s ease-in-out infinite;pointer-events:none}
+    .idea-card{left:2%;top:20%;width:220px;padding:22px;transform:rotate(-8deg);animation:ideaFloat 6s ease-in-out infinite}
+    .build-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(88,199,255,.18),rgba(142,112,255,.18));border:1px solid rgba(108,205,255,.22);font-size:18px;color:#dcf4ff;box-shadow:0 0 24px rgba(86,191,255,.12)}
+    .build-label,.mini-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#74c6ff;font-weight:800}
+    .idea-card .build-label{margin-top:15px}.idea-card strong{display:block;font-size:20px;line-height:1.1;margin-top:7px;letter-spacing:-.025em}.idea-card span,.product-card span,.live-card span{display:block;color:#8ea8bd;font-size:11px;line-height:1.45;margin-top:7px}
+    .design-card{left:23%;top:3%;width:220px;height:150px;padding:17px;transform:rotate(5deg);animation:designFloat 7s ease-in-out infinite}
+    .design-ui{margin-top:13px;height:92px;border:1px solid rgba(116,205,255,.16);border-radius:12px;padding:10px;background:linear-gradient(180deg,#082036,#0a2944)}
+    .ui-top{display:block;width:35%;height:4px;border-radius:99px;background:#76c9ff}.ui-line{display:block;width:68%;height:4px;margin-top:8px;border-radius:99px;background:rgba(145,209,255,.4)}.ui-line.short{width:43%}
+    .ui-tile{position:absolute;display:block;width:31px;height:22px;border-radius:6px;background:rgba(86,188,255,.12);border:1px solid rgba(104,199,255,.14);margin-top:10px}.t2{margin-left:39px}.t3{margin-left:78px}
+    .code-card{right:2%;top:21%;width:230px;height:156px;padding:17px;transform:rotate(8deg);animation:codeFloat 6.5s ease-in-out infinite}
+    .code-lines{margin-top:17px}.code-lines span{display:flex;gap:6px;margin:8px 0}.code-lines i{display:block;width:27px;height:4px;border-radius:99px;background:#6ec7ff}.code-lines b{display:block;width:44px;height:4px;border-radius:99px;background:#8d7dff}.code-lines em{display:block;width:34px;height:4px;border-radius:99px;background:rgba(143,229,188,.56)}
+    .code-cursor{position:absolute;width:2px;height:48px;left:58%;top:55px;background:#b6edff;box-shadow:0 0 10px #75ccff;animation:cursorBlink 1s steps(2) infinite}
+    .product-card{right:18%;bottom:9%;width:245px;height:205px;padding:17px;transform:rotate(-4deg);animation:productFloat 7s ease-in-out infinite}
+    .product-screen{height:112px;margin-top:11px;border:1px solid rgba(112,205,255,.15);border-radius:14px;padding:10px;background:linear-gradient(160deg,#092038,#0b2e49);box-shadow:inset 0 0 35px rgba(60,176,255,.05)}
+    .screen-nav{display:flex;gap:5px}.screen-nav span{width:22px;height:3px;border-radius:99px;background:#72cbff;opacity:.65}.screen-nav span:nth-child(2){width:40px;opacity:.35}.screen-nav span:nth-child(3){width:13px;opacity:.25}
+    .screen-hero{height:42px;margin-top:9px;border-radius:9px;background:radial-gradient(circle at 35% 45%,rgba(103,201,255,.32),transparent 20%),linear-gradient(120deg,rgba(100,199,255,.12),rgba(147,113,255,.1));border:1px solid rgba(112,206,255,.12)}
+    .screen-bars{display:flex;gap:5px;margin-top:8px}.screen-bars span{height:4px;flex:1;border-radius:99px;background:#73cbff;opacity:.5}.screen-bars span:nth-child(2){opacity:.28}.screen-bars span:nth-child(3){opacity:.4}
+    .product-card strong{display:block;font-size:16px;margin-top:13px}.live-card{right:0;bottom:28%;width:205px;padding:16px;display:flex;align-items:center;gap:12px;transform:rotate(4deg);animation:liveFloat 6.8s ease-in-out infinite}
+    .live-pulse{width:13px;height:13px;flex:0 0 13px;border-radius:50%;background:#8fffc8;box-shadow:0 0 0 0 rgba(143,255,200,.45);animation:livePulse 1.8s infinite}.live-card strong{display:block;font-size:16px;margin-top:5px}
+    .path-label{position:absolute;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(7,24,40,.66);font-size:8px;letter-spacing:.18em;color:#7ea3bc;font-weight:800;backdrop-filter:blur(9px)}
+    .p1{left:16%;bottom:22%;animation:labelGlow 3.3s infinite}.p2{left:38%;top:22%;animation:labelGlow 3.3s -1s infinite}.p3{right:19%;top:44%;animation:labelGlow 3.3s -2s infinite}.p4{right:15%;bottom:8%;animation:labelGlow 3.3s -2.6s infinite}
+    .traveller{position:absolute;width:7px;height:7px;border-radius:50%;background:#7fd3ff;box-shadow:0 0 17px rgba(127,211,255,.9);z-index:3}.t-one{left:13%;top:54%;animation:travelOne 7s linear infinite}.t-two{left:25%;top:20%;background:#a58aff;box-shadow:0 0 17px rgba(165,138,255,.75);animation:travelTwo 8.5s linear infinite}.t-three{left:34%;top:67%;background:#93ffd0;box-shadow:0 0 17px rgba(147,255,208,.75);animation:travelThree 9s linear infinite}
+    .build-conversion{position:relative;z-index:4;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);background:rgba(5,15,25,.75);backdrop-filter:blur(18px)}
+    .conversion-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .conversion-kicker{display:block;text-transform:uppercase;letter-spacing:.15em;font-size:9px;color:#6dc6ff;font-weight:800}.conversion-inner strong{display:block;font-size:19px;letter-spacing:-.02em;margin-top:5px}
+    .conversion-steps{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.12em;color:#96acc0;font-weight:800;white-space:nowrap}.conversion-steps i{font-style:normal;color:#6cc7ff;animation:arrowBlink 1.5s infinite}.conversion-steps i:nth-of-type(2){animation-delay:-.5s}
+    .conversion-button{padding:12px 16px;border-radius:999px;border:1px solid rgba(112,202,255,.22);background:rgba(84,182,255,.08);color:#dff4ff;font-size:12px;font-weight:800;white-space:nowrap;transition:.3s}.conversion-button:hover{background:rgba(84,182,255,.16);transform:translateY(-2px)}
+    .conversion-button b{margin-left:6px;color:#78ccff}
+    @keyframes stageOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes stageOrbitReverse{to{transform:translate(-50%,-50%) rotate(-360deg)}}
+    @keyframes cardSheen{0%,65%{transform:translateX(-130%)}80%,100%{transform:translateX(130%)}}
+    @keyframes ideaFloat{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-12px)}}
+    @keyframes designFloat{0%,100%{transform:rotate(5deg) translateY(0)}50%{transform:rotate(3deg) translateY(-10px)}}
+    @keyframes codeFloat{0%,100%{transform:rotate(8deg) translateY(0)}50%{transform:rotate(5deg) translateY(-13px)}}
+    @keyframes productFloat{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-16px)}}
+    @keyframes liveFloat{0%,100%{transform:rotate(4deg) translateY(0)}50%{transform:rotate(1deg) translateY(-10px)}}
+    @keyframes cursorBlink{0%,45%{opacity:1}46%,100%{opacity:0}}
+    @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(143,255,200,.42)}70%{box-shadow:0 0 0 12px rgba(143,255,200,0)}100%{box-shadow:0 0 0 0 rgba(143,255,200,0)}}
+    @keyframes labelGlow{0%,100%{opacity:.45}50%{opacity:1;box-shadow:0 0 22px rgba(110,195,255,.08)}}
+    @keyframes travelOne{0%{left:12%;top:54%;opacity:0}12%{opacity:1}43%{left:34%;top:38%}68%{left:57%;top:51%}91%{left:77%;top:28%;opacity:1}100%{left:86%;top:24%;opacity:0}}
+    @keyframes travelTwo{0%{left:24%;top:20%;opacity:0}15%{opacity:1}38%{left:43%;top:29%}68%{left:63%;top:44%}100%{left:82%;top:45%;opacity:0}}
+    @keyframes travelThree{0%{left:33%;top:67%;opacity:0}12%{opacity:1}36%{left:46%;top:58%}73%{left:70%;top:37%}100%{left:89%;top:18%;opacity:0}}
+    @media (max-width:1100px){.hero-product-stage{right:-8%;opacity:.9;transform:scale(.85)}.conversion-inner{flex-wrap:wrap;padding:18px 0}.conversion-steps{order:3;width:100%;justify-content:center}}
+    @media (max-width:900px){.hero-product-stage{display:none}.hero-content{max-width:760px}.conversion-inner{display:block;padding:20px 0}.conversion-steps{justify-content:flex-start;margin:12px 0}.conversion-button{display:inline-block}}
+
+  
+    /* Source-grounded student academy expansion */
+    .academy-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#06111f 0%,#071726 52%,#040d17 100%)}
+    .academy-hero{position:relative;min-height:520px;margin-top:28px;border:1px solid rgba(255,255,255,.09);border-radius:34px;overflow:hidden;background:
+      radial-gradient(circle at 60% 45%,rgba(77,188,255,.12),transparent 21%),
+      radial-gradient(circle at 78% 25%,rgba(147,111,255,.1),transparent 21%),
+      linear-gradient(145deg,#061624,#0a2035 52%,#040f1a);box-shadow:0 40px 110px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04)}
+    .academy-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(circle at 50% 55%,black,transparent 82%);opacity:.44}
+    .academy-hero-glow{position:absolute;right:8%;top:18%;width:300px;height:300px;border-radius:50%;filter:blur(80px);background:#48b8ff;opacity:.08;animation:academyHeroGlow 6s ease-in-out infinite}
+    .academy-hero-content{position:relative;z-index:2;padding:54px 52px;max-width:700px}
+    .academy-badge{display:inline-flex;padding:8px 12px;border:1px solid rgba(111,204,255,.18);border-radius:999px;background:rgba(80,183,255,.05);color:#78caff;font-size:10px;font-weight:800;letter-spacing:.16em}
+    .academy-hero-content h3{font-size:clamp(44px,6vw,74px);line-height:.96;letter-spacing:-.055em;margin:18px 0 15px}.academy-hero-content h3{background:linear-gradient(90deg,#fff 0%,#cdeeff 48%,#a090ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.academy-hero-content p{font-size:17px;line-height:1.6;max-width:590px;color:#a7bccf}
+    .academy-journey{position:absolute;left:7%;right:7%;bottom:34px;height:96px;display:flex;align-items:center;justify-content:space-between;gap:5px;z-index:2}
+    .journey-line{position:absolute;left:1%;right:1%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(107,200,255,.45),rgba(153,126,255,.42),transparent);box-shadow:0 0 22px rgba(90,193,255,.08)}
+    .journey-node{position:relative;padding:9px 11px;border:1px solid rgba(255,255,255,.09);background:rgba(7,25,42,.76);backdrop-filter:blur(12px);border-radius:999px;font-size:9px;letter-spacing:.13em;color:#b6c9d9;font-weight:800;box-shadow:0 15px 40px rgba(0,0,0,.22);animation:journeyFloat 5s ease-in-out infinite}.j2{animation-delay:-.7s}.j3{animation-delay:-1.4s}.j4{animation-delay:-2.1s}.j5{animation-delay:-2.8s}.j6{animation-delay:-3.5s}.j7{animation-delay:-4.2s}.academy-journey i{position:relative;font-style:normal;color:#6fc8ff;animation:journeyArrow 1.7s infinite}
+    .journey-signal{position:absolute;width:7px;height:7px;border-radius:50%;background:#7bd0ff;box-shadow:0 0 16px rgba(123,208,255,.92);top:calc(50% - 3px);left:1%;animation:journeyTravel 7s linear infinite}.js2{animation-delay:-2.3s;background:#a289ff;box-shadow:0 0 16px rgba(162,137,255,.7)}.js3{animation-delay:-4.6s;background:#8fffc8;box-shadow:0 0 16px rgba(143,255,200,.7)}
+    .curriculum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:22px}
+    .curriculum-card{position:relative;min-height:470px;padding:17px;border:1px solid rgba(255,255,255,.08);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.016));overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+    .curriculum-card:hover{transform:translateY(-8px);border-color:rgba(111,201,255,.28);box-shadow:0 28px 75px rgba(0,0,0,.26)}
+    .curriculum-art{height:158px;border-radius:17px;overflow:hidden;position:relative;border:1px solid rgba(255,255,255,.06);background:radial-gradient(circle at 50% 50%,rgba(90,193,255,.1),transparent 55%),linear-gradient(145deg,#071725,#0a2136)}
+    .curriculum-art:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.04) 50%,transparent 70%);transform:translateX(-130%);animation:curriculumSheen 5.5s ease-in-out infinite}
+    .art-core{position:absolute;left:50%;top:50%;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:18px;border:1px solid rgba(114,205,255,.28);background:rgba(10,35,54,.85);box-shadow:0 0 35px rgba(77,184,255,.13);animation:curriculumCore 3.2s ease-in-out infinite}
+    .art-orbit{position:absolute;left:50%;top:50%;width:96px;height:96px;transform:translate(-50%,-50%);border:1px solid rgba(111,203,255,.18);border-radius:50%;animation:curriculumOrbit 7s linear infinite}.art-orbit.second{width:132px;height:132px;border-style:dashed;border-color:rgba(159,126,255,.16);animation-direction:reverse;animation-duration:11s}
+    .art-pulse{position:absolute;width:7px;height:7px;border-radius:50%;background:#79ccff;box-shadow:0 0 15px rgba(121,204,255,.9);animation:curriculumParticle 4.5s linear infinite}.p-a{left:18%;top:24%}.p-b{right:14%;top:33%;animation-delay:-1.5s}.p-c{left:70%;bottom:18%;animation-delay:-3s}
+    .art-code{position:absolute;right:11px;bottom:9px;font:800 9px ui-monospace;color:#50718a;letter-spacing:.13em}
+    .curriculum-number{color:#73c8ff;font-size:10px;letter-spacing:.15em;font-weight:800;margin-top:18px}.curriculum-card .module-kicker{margin-top:8px}.curriculum-card h3{font-size:22px;line-height:1.08;letter-spacing:-.03em;margin:8px 0 10px}.curriculum-card>p{color:#99aec1;font-size:12px;line-height:1.62;margin:0}
+    .module-meta{margin-top:17px;padding-top:15px;border-top:1px solid rgba(255,255,255,.07);display:grid;gap:7px}.module-meta span{font-size:10px;color:#7894aa;line-height:1.5}.module-meta b{font-size:9px;color:#6dc4ff;letter-spacing:.14em;text-transform:uppercase}.module-meta em{font-style:normal;font-size:10px;color:#d3e3ef}
+    .academy-roles{margin-top:80px}.role-head{margin-bottom:22px}.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.role-band{padding:18px 20px;border:1px solid rgba(255,255,255,.08);border-radius:17px;background:rgba(255,255,255,.02);display:flex;gap:18px;align-items:center;transition:.3s}.role-band:hover{transform:translateX(5px);border-color:rgba(105,201,255,.24)}.role-band strong{flex:0 0 180px;color:#e4f0f7;font-size:13px}.role-band span{color:#91a7ba;font-size:11px;line-height:1.55}
+    .student-outcome{padding:86px 0 0}.outcome-card{position:relative;overflow:hidden;text-align:center;padding:62px 45px;border:1px solid rgba(255,255,255,.1);border-radius:30px;background:radial-gradient(circle at 50% 35%,rgba(78,186,255,.11),transparent 26%),linear-gradient(135deg,#071a2b,#06111e);box-shadow:0 30px 90px rgba(0,0,0,.22)}.outcome-glow{position:absolute;left:50%;top:22%;width:260px;height:260px;transform:translate(-50%,-50%);border-radius:50%;background:#438fff;filter:blur(75px);opacity:.06;animation:outcomeGlow 6s ease-in-out infinite}.outcome-orbit{position:absolute;left:50%;top:30%;width:420px;height:420px;transform:translate(-50%,-50%);border:1px dashed rgba(103,199,255,.1);border-radius:50%;animation:curriculumOrbit 25s linear infinite}.outcome-card h2{position:relative;z-index:2}.outcome-card h2 span{background:linear-gradient(90deg,#fff,#7fcfff,#9d84ff);-webkit-background-clip:text;background-clip:text;color:transparent}.outcome-flow{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;margin:28px auto;max-width:1000px}.outcome-flow span{padding:7px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);font-size:9px;letter-spacing:.08em;color:#b4c6d6}.outcome-flow i{font-style:normal;color:#73c9ff;font-size:11px;animation:journeyArrow 1.5s infinite}.student-quote{position:relative;z-index:2;max-width:680px;margin:30px auto 26px;padding:25px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.quote-mark{font-size:42px;line-height:.7;color:#70c7ff;opacity:.55}.student-quote p{font-size:20px;letter-spacing:-.02em}.student-quote span{font-size:12px;line-height:1.7;color:#91a8ba}
+    @keyframes academyHeroGlow{0%,100%{transform:scale(.92);opacity:.06}50%{transform:scale(1.12);opacity:.13}}@keyframes journeyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes journeyArrow{0%,100%{opacity:.35}50%{opacity:1}}@keyframes journeyTravel{0%{left:1%;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:99%;opacity:0}}
+    @keyframes curriculumSheen{0%,65%{transform:translateX(-130%)}82%,100%{transform:translateX(130%)}}@keyframes curriculumCore{0%,100%{transform:translate(-50%,-50%) scale(.92)}50%{transform:translate(-50%,-50%) scale(1.08)}}@keyframes curriculumOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes curriculumParticle{0%{transform:translate(0,0);opacity:0}12%{opacity:1}54%{transform:translate(38px,-27px);opacity:1}100%{transform:translate(74px,13px);opacity:0}}
+    @keyframes outcomeGlow{0%,100%{transform:translate(-50%,-50%) scale(.85);opacity:.04}50%{transform:translate(-50%,-50%) scale(1.2);opacity:.1}}
+    @media (max-width:1050px){.curriculum-grid{grid-template-columns:repeat(2,1fr)}.role-grid{grid-template-columns:1fr}.role-band strong{flex-basis:150px}}
+    @media (max-width:760px){.academy-hero{min-height:700px}.academy-hero-content{padding:35px 26px}.academy-hero-content h3{font-size:48px}.academy-journey{left:26px;right:26px;bottom:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;height:auto}.journey-line,.journey-signal{display:none}.academy-journey i{display:none}.curriculum-grid{grid-template-columns:1fr}.curriculum-card{min-height:440px}.role-band{display:block}.role-band strong{display:block;margin-bottom:8px}.outcome-card{padding:42px 22px}}
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">R</span>
+        <span>REVAPPAYYA<small>IT SERVICES</small></span>
+      </a>
+      <nav class="menu">
+        <a href="#services">What We Do</a><a href="#solutions">Solutions</a><a href="#engineering">Engineering</a><a href="#academy">Students</a><a href="#products">Products</a>
+        <a href="#industries">Industries</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Talk to us</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div><div class="glow"></div>
+      <div class="wave" aria-hidden="true">
+        <svg viewBox="0 0 1600 420" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="wg" x1="0" x2="1">
+              <stop offset="0" stop-color="#3faeff" stop-opacity=".08"/>
+              <stop offset=".42" stop-color="#58bfff" stop-opacity=".88"/>
+              <stop offset=".75" stop-color="#9d86ff" stop-opacity=".72"/>
+              <stop offset="1" stop-color="#58bfff" stop-opacity=".15"/>
+            </linearGradient>
+            <filter id="softGlow"><feGaussianBlur stdDeviation="10"/></filter>
+            <filter id="lineGlow"><feGaussianBlur stdDeviation="2.5"/></filter>
+          </defs>
+          <g class="wire-glow">
+            <path d="M-10 330 C230 60,390 70,580 230 S900 490,1110 220 S1400 10,1610 120" fill="none" stroke="url(#wg)" stroke-width="34" opacity=".25" filter="url(#softGlow)"/>
+            <path d="M-10 330 C230 60,390 70,580 230 S900 490,1110 220 S1400 10,1610 120" fill="none" stroke="#4eb8ff" stroke-width="8" opacity=".32" filter="url(#lineGlow)"/>
+          </g>
+          <g class="wires">
+            <path pathLength="1" d="M-10 330 C230 60,390 70,580 230 S900 490,1110 220 S1400 10,1610 120" fill="none" stroke="url(#wg)" stroke-width="3.5" opacity=".9"/>
+            <path pathLength="1" d="M-10 342 C230 72,390 82,580 242 S900 502,1110 232 S1400 22,1610 132" fill="none" stroke="#6c86ff" stroke-width="1.4" opacity=".56"/>
+            <path pathLength="1" d="M-10 318 C230 48,390 58,580 218 S900 478,1110 208 S1400 -2,1610 108" fill="none" stroke="#58bfff" stroke-width="1.2" opacity=".35"/>
+            <path pathLength="1" d="M-10 355 C230 85,390 95,580 255 S900 515,1110 245 S1400 35,1610 145" fill="none" stroke="#8d78ff" stroke-width="1" opacity=".26"/>
+          </g>
+          <g class="signal">
+            <circle cx="0" cy="0" r="4"/>
+            <circle cx="0" cy="0" r="13" class="signal-ring"/>
+          </g>
+          <g class="signal signal-b">
+            <circle cx="0" cy="0" r="3"/>
+            <circle cx="0" cy="0" r="10" class="signal-ring"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container hero-content">
+        <span class="eyebrow">From idea to a live product</span>
+        <h1>Have an idea?<br><span class="hero-highlight">Let’s build it.</span></h1>
+        <p>Tell us what you want to build. We turn ideas into customer apps, business platforms and complete digital products — then help you deploy, support, manage and scale them.</p>
+        <div class="hero-actions">
+          <a class="button primary hero-build-btn" href="#contact"><span>Start building with us</span><b>→</b></a>
+          <a class="button secondary" href="#engineering">See how we build</a>
+        </div>
+      </div>
+
+      <div class="hero-product-stage" aria-hidden="true">
+        <div class="stage-orbit orbit-main"></div>
+        <div class="stage-orbit orbit-small"></div>
+
+        <div class="build-card idea-card">
+          <div class="build-icon">✦</div>
+          <div class="build-label">YOUR IDEA</div>
+          <strong>Something you want to build.</strong>
+          <span>Bring the problem. We’ll map the product.</span>
+        </div>
+
+        <div class="build-card design-card">
+          <div class="mini-label">01 / DESIGN</div>
+          <div class="design-ui">
+            <span class="ui-top"></span><span class="ui-line"></span><span class="ui-line short"></span>
+            <span class="ui-tile"></span><span class="ui-tile t2"></span><span class="ui-tile t3"></span>
+          </div>
+        </div>
+
+        <div class="build-card code-card">
+          <div class="mini-label">02 / ENGINEER</div>
+          <div class="code-lines">
+            <span><i></i><b></b><em></em></span>
+            <span><i></i><b></b><em></em></span>
+            <span><i></i><b></b><em></em></span>
+            <span><i></i><b></b><em></em></span>
+          </div>
+          <div class="code-cursor"></div>
+        </div>
+
+        <div class="build-card product-card">
+          <div class="mini-label">03 / PRODUCT</div>
+          <div class="product-screen">
+            <div class="screen-nav"><span></span><span></span><span></span></div>
+            <div class="screen-hero"></div>
+            <div class="screen-bars"><span></span><span></span><span></span></div>
+          </div>
+          <strong>Built for real users.</strong>
+          <span>Web • Mobile • Backend • Cloud</span>
+        </div>
+
+        <div class="build-card live-card">
+          <div class="live-pulse"></div>
+          <div>
+            <div class="mini-label">04 / LIVE</div>
+            <strong>Ready for launch.</strong>
+            <span>Deploy • Monitor • Scale</span>
+          </div>
+        </div>
+
+        <div class="path-label p1">IDEA</div>
+        <div class="path-label p2">DESIGN</div>
+        <div class="path-label p3">BUILD</div>
+        <div class="path-label p4">LAUNCH</div>
+
+        <div class="traveller t-one"></div>
+        <div class="traveller t-two"></div>
+        <div class="traveller t-three"></div>
+      </div>
+    </section>
+
+    <div class="build-conversion">
+      <div class="container conversion-inner">
+        <div>
+          <span class="conversion-kicker">Have a product idea?</span>
+          <strong>Let’s turn it into something people can use.</strong>
+        </div>
+        <div class="conversion-steps">
+          <span>Idea</span><i>→</i><span>Design</span><i>→</i><span>Build</span><i>→</i><span>Launch</span>
+        </div>
+        <a href="#contact" class="conversion-button">Start a product conversation <b>↗</b></a>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">What we do</div><h2>One partner.<br/>End-to-end technology.</h2></div>
+          <p class="lead">A connected capability model spanning IT operations, software engineering and business enablement — so you can work with one technology partner across the lifecycle.</p>
+        </div>
+        <div class="pillars">
+          <article class="card"><div class="num">01 / 03</div><h3>Enterprise IT Infrastructure & Managed Services</h3><p>Service desk, technical support, field engineering, networking, servers, data center, cloud, cybersecurity, IMAC, AMC and managed operations.</p><a class="linkline" href="#solutions">Explore IT services →</a></article>
+          <article class="card"><div class="num">02 / 03</div><h3>Software & Digital Product Engineering</h3><p>Product strategy, UI/UX, web and mobile apps, backend, databases, DevOps, QA, integrations, AI and analytics.</p><a class="linkline" href="#products">Explore engineering →</a></article>
+          <article class="card"><div class="num">03 / 03</div><h3>Business & Digital Operations</h3><p>Operations, vendor enablement, customer support, sales, growth, content, HR, finance and compliance support around technology.</p><a class="linkline" href="#contact">Talk to us →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="dark">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Capabilities</div><h2>From the service desk<br/>to the data center.</h2></div>
+          <p class="lead">Flexible services for enterprise environments, office rollouts, infrastructure projects and ongoing IT operations.</p>
+        </div>
+        <div class="service-orbit">
+          <div class="service-core">
+            <div class="core-ring ring-a"></div>
+            <div class="core-ring ring-b"></div>
+            <div class="core-dot"></div>
+            <div class="core-label">REVAPPAYYA<br><span>TECH OPERATIONS</span></div>
+          </div>
+          <div class="service-node node-1"><span>01</span><strong>Service Desk</strong><small>Support • Incidents • Escalation</small></div>
+          <div class="service-node node-2"><span>02</span><strong>Field Engineering</strong><small>On-site • Install • Replace</small></div>
+          <div class="service-node node-3"><span>03</span><strong>Network & NOC</strong><small>LAN • WAN • Monitoring</small></div>
+          <div class="service-node node-4"><span>04</span><strong>Servers & Data Center</strong><small>Deploy • Migrate • Relocate</small></div>
+          <div class="service-node node-5"><span>05</span><strong>Cloud & Virtualization</strong><small>Cloud • Compute • Platforms</small></div>
+          <div class="service-node node-6"><span>06</span><strong>Security & Endpoints</strong><small>Access • Devices • Protection</small></div>
+          <div class="service-node node-7"><span>07</span><strong>IMAC & Projects</strong><small>Install • Move • Add • Change</small></div>
+        </div>
+
+        <div class="service-explainer-grid">
+          <article class="service-detail active">
+            <div class="detail-number">01</div>
+            <div>
+              <div class="detail-kicker">Always-on support</div>
+              <h3>Global Service Desk & End-User Support</h3>
+              <p>We become the first technical touchpoint for users — handling incidents, requests, remote troubleshooting, software issues, device problems and escalation through structured L1/L2/L3 support.</p>
+              <div class="detail-points"><span>Incident management</span><span>Remote troubleshooting</span><span>Escalation management</span><span>End-user support</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">02</div>
+            <div>
+              <div class="detail-kicker">On-site capability</div>
+              <h3>Field Support & Engineering</h3>
+              <p>For environments that need a physical technical presence, field engineers can perform installation, replacement, troubleshooting and on-site resolution.</p>
+              <div class="detail-points"><span>On-site support</span><span>Hardware replacement</span><span>Installations</span><span>Break/fix</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">03</div>
+            <div>
+              <div class="detail-kicker">Core infrastructure</div>
+              <h3>Network, NOC & Monitoring</h3>
+              <p>Network operations covering LAN, WAN, Wi‑Fi, routing, switching, monitoring and incident response — designed to keep critical connectivity available.</p>
+              <div class="detail-points"><span>Network operations</span><span>Monitoring</span><span>Routing & switching</span><span>NOC processes</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">04</div>
+            <div>
+              <div class="detail-kicker">Infrastructure lifecycle</div>
+              <h3>Servers, Data Center & Relocation</h3>
+              <p>From server installation and decommissioning to migrations, office moves and data-center work, we support the infrastructure lifecycle end to end.</p>
+              <div class="detail-points"><span>Server install</span><span>Decommissioning</span><span>Migration</span><span>Relocation</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">05</div>
+            <div>
+              <div class="detail-kicker">Modern infrastructure</div>
+              <h3>Cloud & Virtualization</h3>
+              <p>Support for cloud infrastructure and virtual environments across deployment, administration, optimization and ongoing operational management.</p>
+              <div class="detail-points"><span>Cloud operations</span><span>Virtual platforms</span><span>Deployment</span><span>Administration</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">06</div>
+            <div>
+              <div class="detail-kicker">Protection</div>
+              <h3>Cybersecurity & Endpoint Management</h3>
+              <p>Operational controls around users and devices, including access, endpoint management and security-focused infrastructure practices.</p>
+              <div class="detail-points"><span>Endpoint management</span><span>Access control</span><span>Security operations</span><span>Device lifecycle</span></div>
+            </div>
+          </article>
+          <article class="service-detail">
+            <div class="detail-number">07</div>
+            <div>
+              <div class="detail-kicker">Projects & transformation</div>
+              <h3>IMAC, Data Center & IT Projects</h3>
+              <p>Structured delivery for Install, Move, Add and Change activities, site expansion, infrastructure relocation and technology rollout projects.</p>
+              <div class="detail-points"><span>IMAC services</span><span>Rack & stack</span><span>Rollouts</span><span>Relocation projects</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="engineering" class="engineering-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Software engineering</div>
+            <h2>From first idea<br/>to production scale.</h2>
+          </div>
+          <p class="lead">We design, engineer and operate modern web, mobile and business applications — connecting product thinking, UX, software engineering, cloud and continuous delivery.</p>
+        </div>
+
+        <div class="engineering-stage">
+          <div class="stage-glow glow-one"></div>
+          <div class="stage-glow glow-two"></div>
+
+          <div class="pipeline-line line-one"></div>
+          <div class="pipeline-line line-two"></div>
+          <div class="pipeline-line line-three"></div>
+
+          <div class="eng-node eng-idea">
+            <div class="node-icon">✦</div>
+            <strong>Idea</strong>
+            <small>Research & product strategy</small>
+          </div>
+          <div class="eng-node eng-design">
+            <div class="node-icon">◫</div>
+            <strong>Design</strong>
+            <small>UX, UI & prototypes</small>
+          </div>
+          <div class="eng-node eng-build">
+            <div class="node-icon">&lt;/&gt;</div>
+            <strong>Build</strong>
+            <small>Web, mobile & backend</small>
+          </div>
+          <div class="eng-node eng-cloud">
+            <div class="node-icon">☁</div>
+            <strong>Deploy</strong>
+            <small>Cloud, CI/CD & infrastructure</small>
+          </div>
+          <div class="eng-node eng-operate">
+            <div class="node-icon">↗</div>
+            <strong>Operate</strong>
+            <small>Monitor, improve & scale</small>
+          </div>
+
+          <div class="code-window">
+            <div class="code-top">
+              <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+              <span class="code-title">revappayya / product-engineering</span>
+            </div>
+            <div class="code-body">
+              <div><span class="code-no">01</span><span class="code-key">const</span> <span class="code-var">product</span> = <span class="code-text">"your idea"</span>;</div>
+              <div><span class="code-no">02</span><span class="code-key">const</span> <span class="code-var">experience</span> = build(<span class="code-text">"web + mobile"</span>);</div>
+              <div><span class="code-no">03</span><span class="code-var">deploy</span>(experience, <span class="code-text">"cloud"</span>);</div>
+              <div><span class="code-no">04</span><span class="code-var">operate</span>(experience, <span class="code-text">"24/7-ready"</span>);</div>
+            </div>
+            <div class="code-progress"><span></span></div>
+          </div>
+        </div>
+
+        <div class="engineering-capabilities">
+          <article class="eng-cap eng-cap-01">
+            <div class="cap-visual visual-app">
+              <div class="device phone-mini"><div class="screen"><span class="screen-dot"></span><span class="screen-line"></span><span class="screen-line short"></span><span class="screen-card"></span></div></div>
+              <div class="device laptop-mini"><div class="screen"><span class="screen-line"></span><span class="screen-line"></span><span class="screen-grid"></span></div></div>
+              <span class="cap-particle p1"></span><span class="cap-particle p2"></span><span class="cap-particle p3"></span>
+            </div>
+            <div class="eng-cap-mark">01</div>
+            <div><div class="eng-cap-kicker">Application development</div><h3>Web & Mobile Applications</h3><p>Customer apps, business portals, dashboards, vendor platforms and operational applications built around real workflows.</p></div>
+          </article>
+
+          <article class="eng-cap eng-cap-02">
+            <div class="cap-visual visual-api">
+              <div class="api-orbit orbit-1"></div><div class="api-orbit orbit-2"></div><div class="api-core">API</div>
+              <span class="api-node api-a">DB</span><span class="api-node api-b">APP</span><span class="api-node api-c">PAY</span>
+              <span class="api-beam beam-a"></span><span class="api-beam beam-b"></span><span class="api-beam beam-c"></span>
+            </div>
+            <div class="eng-cap-mark">02</div>
+            <div><div class="eng-cap-kicker">Software architecture</div><h3>Backend, APIs & Data</h3><p>Secure APIs, business logic, databases, integrations and scalable application foundations designed for growth.</p></div>
+          </article>
+
+          <article class="eng-cap eng-cap-03">
+            <div class="cap-visual visual-devops">
+              <div class="dev-track"><span class="track-dot"></span><span class="track-dot"></span><span class="track-dot"></span><span class="track-dot"></span></div>
+              <div class="dev-stage stage-1">CODE</div><div class="dev-stage stage-2">TEST</div><div class="dev-stage stage-3">BUILD</div><div class="dev-stage stage-4">SHIP</div>
+              <div class="deploy-pulse"></div>
+            </div>
+            <div class="eng-cap-mark">03</div>
+            <div><div class="eng-cap-kicker">Delivery engineering</div><h3>Cloud, DevOps & QA</h3><p>Continuous delivery, cloud deployment, testing, monitoring and quality practices that move software safely into production.</p></div>
+          </article>
+
+          <article class="eng-cap eng-cap-04">
+            <div class="cap-visual visual-ai">
+              <div class="ai-grid"></div><div class="ai-brain"><span></span><span></span><span></span><span></span></div>
+              <div class="ai-scan"></div><span class="ai-data d1">101</span><span class="ai-data d2">AI</span><span class="ai-data d3">+</span>
+            </div>
+            <div class="eng-cap-mark">04</div>
+            <div><div class="eng-cap-kicker">Modern intelligence</div><h3>AI, Automation & Analytics</h3><p>Practical AI features, workflow automation, search, recommendations and product analytics where they create measurable value.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <section id="academy" class="academy-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Revappayya Academy</div>
+            <h2>Learn how a real<br/>software product is built.</h2>
+          </div>
+          <p class="lead">This is not a “learn coding” page. It is an end-to-end product lifecycle program covering business, product, design, engineering, testing, security, cloud, deployment, operations and continuous improvement.</p>
+        </div>
+
+        <div class="academy-hero">
+          <div class="academy-hero-glow"></div>
+          <div class="academy-hero-content">
+            <div class="academy-badge">END-TO-END APPLICATION DEVELOPMENT</div>
+            <h3>From Business Idea<br/>to Production & Play Store.</h3>
+            <p>Students follow one practical product journey and see how the departments, systems and roles work together.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#curriculum">Explore the curriculum →</a>
+              <a class="button secondary" href="mailto:support@revappayyaitservices.com">Enquire about training</a>
+            </div>
+          </div>
+          <div class="academy-journey">
+            <div class="journey-line"></div>
+            <span class="journey-node j1">BUSINESS</span><i>→</i>
+            <span class="journey-node j2">PRODUCT</span><i>→</i>
+            <span class="journey-node j3">DESIGN</span><i>→</i>
+            <span class="journey-node j4">ENGINEERING</span><i>→</i>
+            <span class="journey-node j5">QA</span><i>→</i>
+            <span class="journey-node j6">CLOUD</span><i>→</i>
+            <span class="journey-node j7">LAUNCH</span>
+            <div class="journey-signal js1"></div><div class="journey-signal js2"></div><div class="journey-signal js3"></div>
+          </div>
+        </div>
+
+        <div id="curriculum" class="curriculum-grid">
+          <article class="curriculum-card">
+  <div class="curriculum-art art-1">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">001</span>
+  </div>
+  <div class="curriculum-number">01</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Business Idea & Product Discovery</h3>
+  <p>Identify real-world problems, target customers, market and business opportunity.</p>
+  <div class="module-meta"><span>Founder / CEO • Business Analyst • Market Research • Product Manager</span><b>Output</b><em>Business Requirement Document</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-2">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">002</span>
+  </div>
+  <div class="curriculum-number">02</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Product Requirements</h3>
+  <p>Turn the business idea into functional requirements, user stories, acceptance criteria, MVP and roadmap.</p>
+  <div class="module-meta"><span>Product Manager • Business Analyst • UX Researcher • Technical Lead</span><b>Output</b><em>Product Requirement Document</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-3">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">003</span>
+  </div>
+  <div class="curriculum-number">03</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>System & Product Planning</h3>
+  <p>Map the applications, users, systems, APIs, data stores and third-party services required by a real product.</p>
+  <div class="module-meta"><span>Product Manager • Solution Architect • Business Analyst • Project Manager</span><b>Output</b><em>Complete product/system plan</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-4">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">004</span>
+  </div>
+  <div class="curriculum-number">04</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>UI/UX Design</h3>
+  <p>User flows, information architecture, wireframes, prototypes, UI systems, responsive and accessible experiences.</p>
+  <div class="module-meta"><span>UX Designer • UI Designer • UX Researcher • Product Designer</span><b>Output</b><em>Clickable UI/UX prototype</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-5">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">005</span>
+  </div>
+  <div class="curriculum-number">05</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Technical Architecture</h3>
+  <p>Client-server architecture, APIs, auth, database, storage, notifications, payments, scalability and disaster recovery.</p>
+  <div class="module-meta"><span>Solution Architect • Technical Architect • Engineering Leads • DevOps • Security</span><b>Output</b><em>System Architecture Document</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-6">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">006</span>
+  </div>
+  <div class="curriculum-number">06</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Database Design</h3>
+  <p>ER diagrams, tables, relationships, keys, indexes, transactions, constraints, migrations and recovery.</p>
+  <div class="module-meta"><span>Database Engineer • Backend Developer • Architect</span><b>Output</b><em>Database Architecture + ER Diagram</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-7">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">007</span>
+  </div>
+  <div class="curriculum-number">07</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Backend Development</h3>
+  <p>APIs, business logic, authentication, authorization, roles, CRUD, validation, transactions, jobs, logging and documentation.</p>
+  <div class="module-meta"><span>Backend Developer • Backend Lead • Architect</span><b>Output</b><em>Production-ready backend APIs</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-8">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">008</span>
+  </div>
+  <div class="curriculum-number">08</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Frontend Development</h3>
+  <p>Customer web, admin, vendor, operations and support interfaces with React-style component architecture and API integration.</p>
+  <div class="module-meta"><span>Frontend Developer • Frontend Lead • UI/UX</span><b>Output</b><em>Business and customer web applications</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-9">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">009</span>
+  </div>
+  <div class="curriculum-number">09</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Mobile Application Development</h3>
+  <p>Customer, driver and employee apps, navigation, auth, APIs, push, location, maps, camera, permissions and Android builds.</p>
+  <div class="module-meta"><span>Mobile Developer • Mobile Lead • UI/UX • Backend • QA</span><b>Output</b><em>Production mobile applications</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-10">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">010</span>
+  </div>
+  <div class="curriculum-number">10</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Third-Party Integrations</h3>
+  <p>Payments, OTP/SMS, maps, location, notifications, email, storage, analytics and external APIs with webhooks and retries.</p>
+  <div class="module-meta"><span>Backend • Integration • DevOps • Security</span><b>Output</b><em>Integrated production services</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-11">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">011</span>
+  </div>
+  <div class="curriculum-number">11</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Admin & Business Systems</h3>
+  <p>User, vendor, employee, product, order, payment, reports, coupons, configuration, notifications and audit systems.</p>
+  <div class="module-meta"><span>Product • Backend • Frontend • Operations • QA</span><b>Output</b><em>Operational control systems</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-12">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">012</span>
+  </div>
+  <div class="curriculum-number">12</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Security</h3>
+  <p>Authentication, authorization, role access, secrets, API protection, rate limiting, database/payment security and OWASP fundamentals.</p>
+  <div class="module-meta"><span>Security • Backend • DevOps • Architect</span><b>Output</b><em>Security-ready application</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-13">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">013</span>
+  </div>
+  <div class="curriculum-number">13</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Quality Assurance & Testing</h3>
+  <p>Unit, API, integration, functional, UI, mobile, browser, device, regression, performance, security, E2E and UAT.</p>
+  <div class="module-meta"><span>QA Engineer • QA Lead • Developers • Product • Business Users</span><b>Output</b><em>Test cases, reports, bugs and UAT sign-off</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-14">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">014</span>
+  </div>
+  <div class="curriculum-number">14</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Source Code & Version Control</h3>
+  <p>Git, GitHub/GitLab, repository structure, branching, pull requests, code review, merge strategy, versioning and change management.</p>
+  <div class="module-meta"><span>Developers • Tech Lead • Engineering Manager • DevOps</span><b>Output</b><em>Professional source-control workflow</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-15">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">015</span>
+  </div>
+  <div class="curriculum-number">15</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>DevOps & Cloud</h3>
+  <p>Cloud infrastructure, servers, databases, domains, DNS, SSL, environments, CI/CD, deployment, monitoring, logs, backups and scaling.</p>
+  <div class="module-meta"><span>DevOps • Cloud • Backend • Database • Security</span><b>Output</b><em>Production cloud environment</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-16">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">016</span>
+  </div>
+  <div class="curriculum-number">16</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>CI/CD Pipeline</h3>
+  <p>Developer → Git Push → Code Review → Build → Testing → Staging → QA Approval → Production → Monitoring.</p>
+  <div class="module-meta"><span>Developer • QA • DevOps • Tech Lead</span><b>Output</b><em>Automated release pipeline</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-17">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">017</span>
+  </div>
+  <div class="curriculum-number">17</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Production Deployment</h3>
+  <p>Production configuration, DB migration, backend/frontend deployment, mobile builds, domains, SSL, smoke tests and rollback.</p>
+  <div class="module-meta"><span>Engineering • DevOps • QA</span><b>Output</b><em>Live production release</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-18">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">018</span>
+  </div>
+  <div class="curriculum-number">18</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Google Play Store Deployment</h3>
+  <p>Play Console, package ID, signing, keystore, AAB, screenshots, store listing, privacy, data safety, testing tracks and release.</p>
+  <div class="module-meta"><span>Mobile • Product • QA • Compliance</span><b>Output</b><em>Application deployed to Google Play Store</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-19">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">019</span>
+  </div>
+  <div class="curriculum-number">19</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Business Operations</h3>
+  <p>Customer/vendor/employee onboarding, order/process management, support, refunds, escalations, reporting and SLA management.</p>
+  <div class="module-meta"><span>Operations • Support • Vendor/Partner • Delivery • Finance</span><b>Output</b><em>Operational playbook</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-20">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">020</span>
+  </div>
+  <div class="curriculum-number">20</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Finance & Commercial Systems</h3>
+  <p>Payments, refunds, settlements, commissions, invoices, GST/tax requirements, reconciliation and revenue reporting.</p>
+  <div class="module-meta"><span>Finance • Accountant • Product • Backend • Operations</span><b>Output</b><em>Commercial transaction flows</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-21">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">021</span>
+  </div>
+  <div class="curriculum-number">21</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Marketing & Product Launch</h3>
+  <p>Positioning, branding, website, SEO, social, content, campaigns, acquisition, app-store optimization, referrals and analytics.</p>
+  <div class="module-meta"><span>Marketing • Growth • SEO • Content • Sales</span><b>Output</b><em>Launch and growth plan</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-22">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">022</span>
+  </div>
+  <div class="curriculum-number">22</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Customer Support</h3>
+  <p>Ticketing, complaints, bug escalation, refunds, SLA, escalation matrix, knowledge base and feedback.</p>
+  <div class="module-meta"><span>Support Executive • Support Lead • Operations • Product • Engineering</span><b>Output</b><em>Support workflow</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-23">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">023</span>
+  </div>
+  <div class="curriculum-number">23</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Monitoring & Analytics</h3>
+  <p>Application/server/database monitoring, error and crash tracking, performance, user analytics, conversion tracking and KPIs.</p>
+  <div class="module-meta"><span>DevOps • Engineering • Data • Product</span><b>Output</b><em>Operational analytics dashboard</em></div>
+</article>
+<article class="curriculum-card">
+  <div class="curriculum-art art-24">
+    <span class="art-core"></span><span class="art-orbit"></span><span class="art-orbit second"></span>
+    <span class="art-pulse p-a"></span><span class="art-pulse p-b"></span><span class="art-pulse p-c"></span>
+    <span class="art-code">024</span>
+  </div>
+  <div class="curriculum-number">24</div>
+  <div class="module-kicker">End-to-end curriculum</div>
+  <h3>Product Improvement</h3>
+  <p>Feedback → analytics → problem identification → requirement → design → development → testing → deployment → measurement → improvement.</p>
+  <div class="module-meta"><span>Product • Design • Engineering • QA • Operations</span><b>Output</b><em>Continuous product development cycle</em></div>
+</article>
+        </div>
+
+        <div class="academy-roles">
+          <div class="section-head role-head">
+            <div><div class="kicker">Complete role map</div><h2>Students understand who does what.</h2></div>
+            <p class="lead">The program keeps the real organizational view: leadership, product, design, engineering, security, infrastructure, data, operations, commercial and corporate roles.</p>
+          </div>
+          <div class="role-grid"><div class="role-band"><strong>Leadership</strong><span>Founder • CEO • CTO • COO • CFO • CMO</span></div>
+<div class="role-band"><strong>Product</strong><span>Product Manager • Product Owner • Business Analyst • Product Analyst • Project Manager • Program Manager</span></div>
+<div class="role-band"><strong>Design</strong><span>UX Researcher • UX Designer • UI Designer • Product Designer • Graphic Designer</span></div>
+<div class="role-band"><strong>Engineering</strong><span>Solution Architect • Technical Architect • Tech Lead • Backend • Frontend • Mobile • Full-Stack • Database • Integration</span></div>
+<div class="role-band"><strong>Quality & Security</strong><span>QA Engineer • QA Lead • Automation Tester • Performance Tester • Security Engineer • Security Analyst</span></div>
+<div class="role-band"><strong>Infrastructure</strong><span>DevOps Engineer • Cloud Engineer • SRE • Infrastructure Engineer • Database Administrator</span></div>
+<div class="role-band"><strong>Data & AI</strong><span>Data Analyst • Data Engineer • BI Developer • ML Engineer • AI Engineer</span></div>
+<div class="role-band"><strong>Business Operations</strong><span>Operations Manager • Vendor Manager • Partner Manager • Delivery/Logistics Manager • Customer Support • Support Manager</span></div>
+<div class="role-band"><strong>Commercial</strong><span>Finance Manager • Accountant • Sales Executive • Business Development Manager • Marketing Manager • Growth Manager • SEO • Content</span></div>
+<div class="role-band"><strong>Corporate</strong><span>HR • Recruiter • Legal/Compliance • Administration</span></div></div>
+        </div>
+
+        
+    <section class="student-outcome">
+      <div class="container">
+        <div class="outcome-card">
+          <div class="outcome-orbit"></div>
+          <div class="outcome-glow"></div>
+          <div class="kicker">What the student finishes with</div>
+          <h2>Not just an app.<br><span>A complete product lifecycle.</span></h2>
+          <div class="outcome-flow">
+            <span>Business Idea</span><i>→</i><span>Requirements</span><i>→</i><span>UX/UI</span><i>→</i>
+            <span>Architecture</span><i>→</i><span>Database</span><i>→</i><span>Backend</span><i>→</i>
+            <span>Web</span><i>→</i><span>Mobile</span><i>→</i><span>Integrations</span><i>→</i>
+            <span>Testing</span><i>→</i><span>Security</span><i>→</i><span>Cloud</span><i>→</i>
+            <span>CI/CD</span><i>→</i><span>Production</span><i>→</i><span>Play Store</span><i>→</i>
+            <span>Operations</span><i>→</i><span>Analytics</span><i>→</i><span>Continuous Improvement</span>
+          </div>
+          <div class="student-quote">
+            <div class="quote-mark">“</div>
+            <p><strong>Build, test, deploy and operate a complete real-world software product.</strong></p>
+            <span>Students learn what every department does, why every system exists, who owns it and how the pieces become one production application.</span>
+          </div>
+          <a class="button primary" href="mailto:support@revappayyaitservices.com">Ask about the program →</a>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </section>
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Our products</div><h2>We don't only build for clients.<br/>We build our own products.</h2></div>
+          <p class="lead">Our product engineering capability is shaped by building real products from the ground up.</p>
+        </div>
+        <div class="product">
+          <div class="product-copy">
+            <div>
+              <div class="kicker">Flagship product</div>
+              <h3>AbhiGro</h3>
+              <p>A hyperlocal digital commerce and delivery platform built by Revappayya, bringing together groceries, pharmacy, food and local fulfillment workflows in a single ecosystem.</p>
+              <div class="product-tags"><span class="tag">Customer app</span><span class="tag">Vendor platform</span><span class="tag">Delivery operations</span><span class="tag">Cloud</span></div>
+            </div>
+            <a class="button primary" href="https://abhigro.com" target="_blank" rel="noopener">Visit AbhiGro ↗</a>
+          </div>
+          <div class="product-visual">
+            <div class="phone"><div class="phone-screen">
+              <div class="phone-title">ABHIGRO</div><div class="phone-main">Everyday<br/>essentials.</div>
+              <div class="app-box"><strong>Nearby • Trusted • Fast</strong><div style="font-size:12px;color:#96b4cb;margin-top:5px">A product built by Revappayya.</div></div>
+              <div class="app-box"><strong>Delivery ecosystem</strong><div style="font-size:12px;color:#96b4cb;margin-top:5px">Customer • Vendor • Delivery</div></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="coming">
+          <div class="card"><div class="num">NEXT PRODUCT</div><h3 style="margin-top:30px">Coming Soon</h3><p>A new Revappayya-built digital product is currently in development.</p></div>
+          <div class="card"><div class="num">PRODUCT ENGINEERING</div><h3 style="margin-top:30px">From idea to scale</h3><p>Research, design, engineering, cloud, QA, security, analytics and ongoing product operations.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="dark">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">Industries</div><h2>Technology that fits<br/>the way you operate.</h2></div>
+          <p class="lead">Capabilities can be adapted to enterprise offices, retail, financial services, healthcare, logistics, manufacturing, technology companies and digital businesses.</p>
+        </div>
+        <div class="services">
+          <div class="service"><span>01</span><strong>Banking & Financial Services</strong><p>Infrastructure support, networks, endpoints and operational technology services.</p></div>
+          <div class="service"><span>02</span><strong>Retail & Consumer</strong><p>Store technology, support operations, commerce and digital platforms.</p></div>
+          <div class="service"><span>03</span><strong>Manufacturing</strong><p>Field support, infrastructure projects and business-critical IT operations.</p></div>
+          <div class="service"><span>04</span><strong>Technology & Digital</strong><p>Cloud, engineering, product development and scalable application platforms.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container global">
+        <div>
+          <div class="kicker">Why Revappayya</div>
+          <h2>Built to stay with you beyond go-live.</h2>
+          <p class="lead" style="margin-top:20px">Technology delivery is only one part of the journey. Our model brings engineering and operations together so systems can be built, deployed, supported, managed and improved continuously.</p>
+          <div class="stats">
+            <div class="stat"><strong>Build</strong><span>Design & engineer</span></div>
+            <div class="stat"><strong>Support</strong><span>Operate & resolve</span></div>
+            <div class="stat"><strong>Scale</strong><span>Improve & expand</span></div>
+          </div>
+        </div>
+        <div class="global-box">
+          <div class="kicker">Global capability</div>
+          <h3 style="font-size:34px;margin:16px 0 12px">Support where your business operates.</h3>
+          <p style="color:#a7bbcf">Our end-to-end IT model is designed for distributed teams, multi-site environments and organizations that need a combination of remote, service-desk and field support.</p>
+          <div style="margin-top:26px;padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)">
+            <strong>Service lifecycle</strong>
+            <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
+              <span class="tag">Discover</span><span class="tag">Build</span><span class="tag">Deploy</span><span class="tag">Support</span><span class="tag">Manage</span><span class="tag">Scale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="kicker">Start a conversation</div>
+          <h2>Need a technology partner that can own the whole journey?</h2>
+          <p class="lead">Tell us what you are building, moving, supporting or scaling.</p>
+          <div class="hero-actions" style="margin-top:28px">
+            <a class="button primary" href="mailto:contact@revappayyaitservices.com">Contact Revappayya →</a>
+            <a class="button secondary" href="https://revappayyaitservices.com" target="_blank" rel="noopener">Visit company website ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong style="color:#fff">Revappayya IT Services Pvt Ltd.</strong><div style="font-size:12px;margin-top:6px">End-to-end technology services & digital products.</div></div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>
